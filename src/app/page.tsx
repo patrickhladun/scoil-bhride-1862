@@ -91,9 +91,8 @@ const helpfulLinks = [
 ];
 const navItems = [
   { id: "ourSchool", key: "ourSchool" },
-  { id: "about", key: "about" },
-  { id: "downloads", key: "downloads" },
   { id: "gallery", key: "gallery" },
+  { id: "downloads", key: "downloads" },
   { id: "contact", key: "contact" },
 ];
 
@@ -167,7 +166,9 @@ export default function Home() {
         <div className="max-w-5xl mx-auto py-4 px-8">
           <div className="flex gap-8 items-center">
             <div className="text-white mr-auto">
-              <p className="my-0">Scoil Bhríde 1862</p>
+              <a href="/" className="my-0 font-bold text-lg">
+                Scoil Bhríde 1862
+              </a>
             </div>
             <nav className="hidden md:flex gap-4 text-xs font-semibold">
               {navItems.map((item) => (
@@ -232,7 +233,7 @@ export default function Home() {
           ))}
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/45 to-[var(--primary)]/90" />
           <div className="absolute inset-0 bg-gradient-to-r from-white/40 to-transparent" />
-          <div className="relative max-w-6xl mx-auto flex px-8">
+          <div className="relative max-w-5xl mx-auto flex px-8">
             <div className="flex flex-col md:w-[50%]">
               <Image
                 src="/assets/brand/logo-512x512.webp"
@@ -287,7 +288,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section id="our-school" className="bg-neutral-100">
+      <section id="ourSchool" className="bg-neutral-100">
         <div className="max-w-3xl mx-auto pt-16 pb-2 px-8">
           <h2>{t("ourSchool.headline")}</h2>
           <p className="h5 text-primary-900">{t("ourSchool.subheadline")}</p>
@@ -648,6 +649,7 @@ export default function Home() {
                       href={link.href}
                       target="_blank"
                       rel="noreferrer"
+                      aria-label={link.label}
                       className={`px-1 py-1 transition rounded-lg ${link.wrapperStyles}`}
                     >
                       <Icon name={link.icon} className={link.iconStyles} />
@@ -730,7 +732,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto py-8 px-8 text-center text-xs font-light">
           <p className="my-0 text-sm">
             © {new Date().getFullYear()} Scoil Bhríde Menlo. All rights
-            reserved.
+            reserved. | Designed by Cityweb
           </p>
         </div>
       </footer>
