@@ -1,0 +1,94 @@
+{
+  "hero": {
+    "tag": "Gaeltacht Primary School",
+    "title": "Welcome to Scoil Bhríde 1862",
+    "lead": "An Irish-medium school with fluent staff, caring classrooms, and an active community right beside Galway city.",
+    "ctaPrimary": "Contact Us",
+    "ctaSecondary": "View Gallery"
+  },
+  "nav": {
+    "ourSchool": "Our School",
+    "about": "About",
+    "downloads": "Downloads",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "ourSchool": {
+    "headline": "Our School",
+    "subheadline": "We are an Irish medium school situated in the village of Menlo just on the edge of Galway city.",
+    "body": [
+      "We have 8 mainstream classes and two special classes. We have a state of the art soft play yard for the junior end and an astro turf pitch for all children, which we make great use of and outside organisations train the students in GAA and Rugby. We also make use of the Áras for PE and School Events.",
+      "As a scoil sa Ghaeltacht our teaching staff are all fluent in Irish and through their teaching of, and through, the language our pupils leave with a natural ability in Gaeilge that will stand to them in secondary school. All subjects from Naíonáin Bheaga are taught through Irish except for English, which starts in term 3 in Senior Infants.",
+      "Our school is the only Irish medium Gaeltacht status school within the city bounds and benefits from extra pupil resources and support. With a wide range of after school activities, for example chess and piano, and our own pre-school learning unit, Bóín Dé, Scoil Bhríde offers the complete educational package for young children.",
+      "If you are thinking of joining our fantastic school here at Scoil Bhríde please call us on 091 323 626 and organise to meet our Príomhoide, Máire De Brún."
+    ]
+  },
+  "about": {
+    "heading": "About",
+    "intro": "Our aims and ethos as a Catholic primary school under the patronage of the Bishop of Galway.",
+    "aimsTitle": "Aims of the School",
+    "aimsBody": "The aim of Scoil Bhríde is to provide a caring, safe environment where each child can learn and achieve their highest potential. Irish is the first language of the school and families are encouraged to use Irish at home.",
+    "philosophyTitle": "School Philosophy",
+    "philosophyBody": "Scoil Náisiúnta Bhríde is a Catholic primary school. We aim to give children a sound religious and moral education within the Catholic ethos of the school.",
+    "ethosTitle": "The School Ethos",
+    "ethosBody": "We nurture pride in the Irish language, culture, history and heritage of this Gaeltacht area and we foster respect, self-discipline, and responsibility.",
+    "homeHeading": "Welcome",
+    "homeParagraphs": [
+      "Scoil Bhríde is located in Menlo, just outside Galway city. We are a Gaeltacht school and all staff are fluent in Irish. All subjects are taught through Irish from junior infants, with English starting in term 3 of senior infants.",
+      "We have a state-of-the-art soft play yard for junior pupils and an astro turf pitch used for all kinds of sport. We host training with Father Griffins Éire Óg, Caisleán Gearr CLG, and Corinthians Rugby, and we use the Áras for PE and school events.",
+      "If you are interested in Scoil Bhríde for your children, call us on (091) 762323 and our principal, Máire De Brún, will be happy to help."
+    ],
+    "naionraHeading": "Naíonra Bóín Dé",
+    "naionraParagraphs": [
+      "We are committed to providing an early care and education service of the highest standard and are registered with Tusla – The Child and Family Agency. Our trained, motivated, and friendly staff deliver a warm, stimulating, home-from-home environment.",
+      "We aim to provide a quality service and a stimulating environment where children develop social, personal, and educational skills through a planned curriculum. Your child’s welfare and your peace of mind are most important to us."
+    ]
+  },
+  "downloads": {
+    "heading": "Downloads",
+    "lead": "Access policies, forms, and key documents below.",
+    "policiesTitle": "Policies and Forms",
+    "infoTitle": "Important Information",
+    "formsTitle": "Enrolment",
+    "enrolLead": "Download the enrolment and pre-school forms below.",
+    "newsletterTitle": "Newsletter",
+    "newsletterLead": "See below for the latest newsletter.",
+    "newsletterCta": "Open newsletter",
+    "calendarTitle": "School Calendar",
+    "calendarLead": "Click the PDF to view the latest calendar.",
+    "linksTitle": "Helpful Links"
+  },
+  "links": {
+    "newsletter": {
+      "headline": "Newsletter",
+      "alt": "Click to view the latest newsletter.",
+      "button": "Open newsletter"
+    },
+    "calendar": {
+      "headline": "School Calendar",
+      "alt": "Click to download the latest calendar.",
+      "button": "Calendar 2025 - 2026"
+    },
+    "helpful": {
+      "gaeloideachas": "Gaeloideachas",
+      "gaeilgedonteaghlach": "Gaeilge don Teaghlach",
+      "leighanois": "Léigh Anois",
+      "tg4": "TG4",
+      "irishforparents": "Irish for Parents",
+      "cogg": "COGG",
+      "gaelbhratach": "Gaelbhratach"
+    }
+  },
+  "gallery": {
+    "heading": "Gallery"
+  },
+  "contact": {
+    "heading": "Contact",
+    "lead": "We would love to hear from you.",
+    "principalLabel": "Principal",
+    "addressLabel": "Address",
+    "contactLabel": "Contact",
+    "support": "Support our school.",
+    "follow": "Follow us online."
+  }
+}
