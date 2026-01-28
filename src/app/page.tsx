@@ -162,7 +162,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      <header className="sticky top-0 z-30 bg-primary-700">
+      <header className="sticky top-0 z-100 bg-primary-700">
         <div className="max-w-5xl mx-auto py-4 px-8">
           <div className="flex gap-8 items-center">
             <div className="text-white mr-auto">
@@ -218,7 +218,7 @@ export default function Home() {
       </header>
 
       <section id="hero">
-        <div className="relative min-h-[40vh] w-full overflow-hidden bg-red-500 py-16 text-white">
+        <div className="relative min-h-[40vh] w-full overflow-hidden bg-red-500 pt-16 pb-24 text-white">
           {sliderImages.map((src, index) => (
             <div key={src} className={`hero-slide hero-slide-${index + 1}`}>
               <Image
@@ -231,8 +231,8 @@ export default function Home() {
               />
             </div>
           ))}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/45 to-[var(--primary)]/90" />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-primary-900/90" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/40 to-transparent opacity-40" />
           <div className="relative max-w-5xl mx-auto flex px-8">
             <div className="flex flex-col md:w-[50%]">
               <Image
@@ -260,7 +260,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="-mt-[60px]">
+      <div className="-mt-[59px]">
         <div className="relative flex items-center justify-center">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 max-w-[24px]">
             <svg
@@ -309,7 +309,7 @@ export default function Home() {
       </div>
 
       <section id="aims" className="bg-tertiary-500">
-        <div className="max-w-5xl mx-auto pt-16 pb-2 px-8 text-white">
+        <div className="max-w-5xl mx-auto pt-6 pb-2 px-8 text-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h2 className="text-white">Aims of the School</h2>
