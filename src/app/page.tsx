@@ -124,14 +124,49 @@ const downloadHref = (file: string) => encodeURI(`/downloads/${file}`);
 export default function Home() {
   const [lang, setLang] = useState<"ga" | "en">("en");
   const { t, i18n } = useTranslation();
-
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [showSlider, setShowSlider] = useState(false);
 
   useEffect(() => {
     if (i18n.language !== lang) {
       i18n.changeLanguage(lang);
     }
   }, [i18n, lang]);
+
+  useEffect(() => {
+    const enableSlider = () => setShowSlider(true);
+    let timeoutId: number | undefined;
+    let idleId: number | undefined;
+
+    if (typeof window !== "undefined") {
+      const requestIdle = (window as typeof window & {
+        requestIdleCallback?: (
+          callback: () => void,
+          options?: { timeout: number }
+        ) => number;
+      }).requestIdleCallback;
+
+      if (requestIdle) {
+        idleId = requestIdle(enableSlider, { timeout: 3000 });
+      } else {
+        timeoutId = window.setTimeout(enableSlider, 2000);
+      }
+    }
+
+    return () => {
+      if (typeof window === "undefined") {
+        return;
+      }
+      if (idleId !== undefined) {
+        (window as typeof window & {
+          cancelIdleCallback?: (id: number) => void;
+        }).cancelIdleCallback?.(idleId);
+      }
+      if (timeoutId !== undefined) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (lightboxIndex === null) {
@@ -218,19 +253,32 @@ export default function Home() {
       </header>
 
       <section id="hero">
-        <div className="relative min-h-[40vh] w-full overflow-hidden bg-red-500 pt-16 pb-24 text-white">
-          {sliderImages.map((src, index) => (
-            <div key={src} className={`hero-slide hero-slide-${index + 1}`}>
+        <div className="relative min-h-[40vh] w-full overflow-hidden pt-16 pb-24 text-white">
+          {showSlider ? (
+            sliderImages.map((src, index) => (
+              <div key={src} className={`hero-slide hero-slide-${index + 1}`}>
+                <Image
+                  src={src}
+                  alt="Scoil Bhríde campus"
+                  fill
+                  priority={index === 0}
+                  sizes="100vw"
+                  className="object-cover"
+                />
+              </div>
+            ))
+          ) : (
+            <div className="absolute inset-0">
               <Image
-                src={src}
+                src={sliderImages[0]}
                 alt="Scoil Bhríde campus"
                 fill
-                priority={index === 0}
+                priority
                 sizes="100vw"
                 className="object-cover"
               />
             </div>
-          ))}
+          )}
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-primary-900/90" />
           <div className="absolute inset-0 bg-gradient-to-r from-white/40 to-transparent opacity-40" />
           <div className="relative max-w-5xl mx-auto flex px-8">
