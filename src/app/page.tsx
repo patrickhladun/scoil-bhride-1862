@@ -14,60 +14,59 @@ const navItems = [
   { id: "contact", key: "contact" },
 ];
 
-const policyDownloads = [
-  { label: "Admission Policy 2025", file_name: "Admission Policy 2025.docx" },
-  {
-    label: "Anti Bullying Policy 2025-2026",
-    file_name: "Anti Bullying Policy Scoil Bríde 2025-2026.docx",
+const downloads = {
+  policies: [
+    { label: "Admission Policy 2025", file_name: "Admission Policy 2025.docx" },
+    {
+      label: "Anti Bullying Policy 2025-2026",
+      file_name: "Anti Bullying Policy Scoil Bríde 2025-2026.docx",
+    },
+    {
+      label: "Polasaí Frith-Bhulaíocht",
+      file_name: "Polasaí Frith-Bhulaíocht.docx",
+    },
+    {
+      label: "Bí Cineálta Policy",
+      file_name: "Bí Cineálta Policy.docx",
+    },
+    {
+      label: "Bí Cinealta Anti‑Bullying Policy",
+      file_name:
+        "Bí Cinealta Policy to Prevent and Address Bullying Behaviour.docx",
+    },
+    { label: "Code of Behaviour", file_name: "Code of Behaviour" },
+    { label: "CCTV Policy 2022", file_name: "CCTV Policy 2022.docx" },
+    {
+      label: "Child Safeguarding Statement 25/26",
+      file_name: "Child Safeguarding Statement 25_26.docx",
+    },
+    {
+      label: "Intimate Care and Toileting Policy",
+      file_name: "Intimate Care and Toileting Policy.docx",
+    },
+    {
+      label: "Health and Safety Statement 2025",
+      file_name: "Scoil Bhríde Health and Safety Statement 2025.docx",
+    },
+  ],
+  important: [
+    {
+      label: "Data Protection Policy 2022",
+      file_name: "Data Protection Policy 2022.docx",
+    },
+    { label: "GDPR Statement 2022", file_name: "GDPR Statement 2022.docx" },
+  ],
+  enrolment: [
+    {
+      label: "Clárú do Scoil Bhríde Enrolment Form",
+      file_name: "Clárú do Scoil Bhríde Enrolment Form.pdf",
+    },
+    { label: "Bóín Dé Registration Form", file_name: "Bóín Dé Reg form.pdf" },
+  ],
+  calendar: {
+    label: "Calendar",
+    file_name: "Calendar 2025 - 2026.pdf",
   },
-  {
-    label: "Polasaí Frith-Bhulaíocht",
-    file_name: "Polasaí Frith-Bhulaíocht.docx",
-  },
-  {
-    label: "Bí Cineálta Policy",
-    file_name: "Bí Cineálta Policy.docx",
-  },
-  {
-    label: "Bí Cinealta Anti‑Bullying Policy",
-    file_name:
-      "Bí Cinealta Policy to Prevent and Address Bullying Behaviour.docx",
-  },
-  { label: "Code of Behaviour", file_name: "Code of Behaviour" },
-  { label: "CCTV Policy 2022", file_name: "CCTV Policy 2022.docx" },
-  {
-    label: "Child Safeguarding Statement 25/26",
-    file_name: "Child Safeguarding Statement 25_26.docx",
-  },
-  {
-    label: "Intimate Care and Toileting Policy",
-    file_name: "Intimate Care and Toileting Policy.docx",
-  },
-  {
-    label: "Health and Safety Statement 2025",
-    file_name: "Scoil Bhríde Health and Safety Statement 2025.docx",
-  },
-];
-
-const infoDownloads = [
-  {
-    label: "Data Protection Policy 2022",
-    file_name: "Data Protection Policy 2022.docx",
-  },
-  { label: "GDPR Statement 2022", file_name: "GDPR Statement 2022.docx" },
-];
-
-const formDownloads = [
-  {
-    label: "Clárú do Scoil Bhríde Enrolment Form",
-    file_name: "Clárú do Scoil Bhríde Enrolment Form.pdf",
-  },
-  { label: "Bóín Dé Registration Form", file_name: "Bóín Dé Reg form.pdf" },
-];
-
-const calendarDownload = {
-  label: "Calendar 2025 - 2026",
-  file_name: "Calendar 2025 - 2026.pdf",
 };
 
 const socialLinks = [
@@ -96,16 +95,19 @@ const helpfulLinks = [
   { label: "COGG", href: "https://cogg.ie/" },
   { label: "Gaelbhratach", href: "https://gaelbhratach.ie/" },
 ];
-
-const images = [
+const sliderImages = [
+  "/assets/gallery/gallery-d8uw.webp",
+  "/assets/gallery/gallery-dt3s.webp",
+  "/assets/gallery/gallery-gbdh.webp",
+  "/assets/gallery/gallery-gs5t.webp",
+];
+const galleryImages = [
   "/assets/gallery/gallery-d8uw.webp",
   "/assets/gallery/gallery-dt3s.webp",
   "/assets/gallery/gallery-gbdh.webp",
   "/assets/gallery/gallery-gs5t.webp",
   "/assets/gallery/gallery-o7ew.webp",
 ];
-
-const sliderImages = [images[0], images[1], images[2], images[3]];
 const galleryItems = [
   {
     type: "video" as const,
@@ -113,7 +115,7 @@ const galleryItems = [
     thumbnail: "/assets/videos/scoil-bhride-video-du7w-thumb.webp",
     label: "Scoil Bhríde video",
   },
-  ...images.map((src) => ({
+  ...galleryImages.map((src) => ({
     type: "image" as const,
     src,
     label: "Scoil Bhríde gallery",
@@ -526,7 +528,7 @@ export default function Home() {
             <div>
               <h3>{t("downloads.headers.1")}</h3>
               <div className="mt-4 flex flex-col gap-4">
-                {policyDownloads.map((file) => (
+                {downloads.policies.map((file) => (
                   <Link
                     key={file.file_name}
                     href={downloadHref(file.file_name)}
@@ -541,7 +543,7 @@ export default function Home() {
               <div>
                 <h3>{t("downloads.headers.2")}</h3>
                 <div className="mt-4 flex flex-col gap-4">
-                  {infoDownloads.map((file) => (
+                  {downloads.important.map((file) => (
                     <Link
                       key={file.file_name}
                       href={downloadHref(file.file_name)}
@@ -555,7 +557,7 @@ export default function Home() {
               <div>
                 <h3>{t("downloads.headers.3")}</h3>
                 <div className="mt-4 flex flex-col gap-4">
-                  {formDownloads.map((file) => (
+                  {downloads.enrolment.map((file) => (
                     <Link
                       key={file.file_name}
                       href={downloadHref(file.file_name)}
@@ -597,7 +599,7 @@ export default function Home() {
             <p>{t("links.calendar.subheading")}</p>
             <div className="">
               <Link
-                href={downloadHref(calendarDownload.file_name)}
+                href={downloadHref(downloads.calendar.file_name)}
                 label={`${t("links.calendar.button")} 2025 - 2026`}
                 type="download"
               />
