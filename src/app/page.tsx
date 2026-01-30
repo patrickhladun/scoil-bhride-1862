@@ -110,13 +110,26 @@ const sliderImages = [
   "/assets/gallery/gallery-gbdh.webp",
   "/assets/gallery/gallery-gs5t.webp",
 ];
-const galleryImages = [
-  "/assets/gallery/gallery-d8uw.webp",
+const schoolImages = [
   "/assets/gallery/gallery-dt3s.webp",
   "/assets/gallery/gallery-gbdh.webp",
   "/assets/gallery/gallery-gs5t.webp",
   "/assets/gallery/gallery-o7ew.webp",
+  "/assets/gallery/gallery-ck82.webp",
+  "/assets/gallery/gallery-isl9.webp",
+  "/assets/gallery/gallery-s2jx.webp",
+  "/assets/gallery/gallery-sjwu.webp",
 ];
+const preschoolImages = [
+  "/assets/gallery/gallery-pre-d8wh.webp",
+  "/assets/gallery/gallery-pre-dgu3.webp",
+  "/assets/gallery/gallery-pre-duj3.webp",
+  "/assets/gallery/gallery-pre-dyyw.webp",
+  "/assets/gallery/gallery-pre-jsku.webp",
+  "/assets/gallery/gallery-pre-sj2k.webp",
+  "/assets/gallery/gallery-pre-skjc.webp",
+];
+const galleryImages = [...schoolImages, ...preschoolImages];
 const galleryItems = [
   {
     type: "video" as const,
