@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import "@/i18n";
 import Gallery from "@components/Gallery/Gallery";
@@ -151,10 +151,31 @@ export default function Home() {
   const { t, i18n } = useTranslation();
   const [showSlider, setShowSlider] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const hasInitializedLanguage = useRef(false);
+
+  useEffect(() => {
+    if (hasInitializedLanguage.current) {
+      return;
+    }
+    hasInitializedLanguage.current = true;
+    if (typeof window === "undefined") {
+      return;
+    }
+    const savedLang = window.localStorage.getItem("scoilbhride-lang");
+    if (savedLang === "ga" || savedLang === "en") {
+      setLang(savedLang);
+      if (i18n.language !== savedLang) {
+        i18n.changeLanguage(savedLang);
+      }
+    }
+  }, [i18n]);
 
   useEffect(() => {
     if (i18n.language !== lang) {
       i18n.changeLanguage(lang);
+    }
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("scoilbhride-lang", lang);
     }
   }, [i18n, lang]);
 
@@ -228,12 +249,11 @@ export default function Home() {
                 </a>
               ))}
             </nav>
-            <div className="flex items-center gap-2">
+            <div className="hidden md:flex items-center gap-2">
               <button
                 type="button"
                 onClick={() => {
                   setLang("ga");
-                  i18n.changeLanguage("ga");
                 }}
                 className={`rounded-full px-4 py-2 text-xs font-semibold transition ${
                   lang === "ga"
@@ -248,7 +268,6 @@ export default function Home() {
                 type="button"
                 onClick={() => {
                   setLang("en");
-                  i18n.changeLanguage("en");
                 }}
                 className={`rounded-full px-4 py-2 text-xs font-semibold transition ${
                   lang === "en"
@@ -335,7 +354,6 @@ export default function Home() {
                 type="button"
                 onClick={() => {
                   setLang("ga");
-                  i18n.changeLanguage("ga");
                   setIsMobileNavOpen(false);
                 }}
                 className={`rounded-full px-4 py-2 text-xs font-semibold transition ${
@@ -351,7 +369,6 @@ export default function Home() {
                 type="button"
                 onClick={() => {
                   setLang("en");
-                  i18n.changeLanguage("en");
                   setIsMobileNavOpen(false);
                 }}
                 className={`rounded-full px-4 py-2 text-xs font-semibold transition ${
