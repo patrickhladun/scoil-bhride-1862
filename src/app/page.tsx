@@ -7,6 +7,13 @@ import "@/i18n";
 import Link from "@components/Link/Link";
 import Icon from "@components/Icon/Icon";
 
+const navItems = [
+  { id: "ourSchool", key: "ourSchool" },
+  { id: "gallery", key: "gallery" },
+  { id: "downloads", key: "downloads" },
+  { id: "contact", key: "contact" },
+];
+
 const policyDownloads = [
   { label: "Admission Policy 2025", file_name: "Admission Policy 2025.docx" },
   {
@@ -89,12 +96,6 @@ const helpfulLinks = [
   { key: "cogg", href: "https://cogg.ie/" },
   { key: "gaelbhratach", href: "https://gaelbhratach.ie/" },
 ];
-const navItems = [
-  { id: "ourSchool", key: "ourSchool" },
-  { id: "gallery", key: "gallery" },
-  { id: "downloads", key: "downloads" },
-  { id: "contact", key: "contact" },
-];
 
 const images = [
   "/assets/gallery/gallery-d8uw.webp",
@@ -139,12 +140,14 @@ export default function Home() {
     let idleId: number | undefined;
 
     if (typeof window !== "undefined") {
-      const requestIdle = (window as typeof window & {
-        requestIdleCallback?: (
-          callback: () => void,
-          options?: { timeout: number }
-        ) => number;
-      }).requestIdleCallback;
+      const requestIdle = (
+        window as typeof window & {
+          requestIdleCallback?: (
+            callback: () => void,
+            options?: { timeout: number },
+          ) => number;
+        }
+      ).requestIdleCallback;
 
       if (requestIdle) {
         idleId = requestIdle(enableSlider, { timeout: 3000 });
@@ -158,9 +161,11 @@ export default function Home() {
         return;
       }
       if (idleId !== undefined) {
-        (window as typeof window & {
-          cancelIdleCallback?: (id: number) => void;
-        }).cancelIdleCallback?.(idleId);
+        (
+          window as typeof window & {
+            cancelIdleCallback?: (id: number) => void;
+          }
+        ).cancelIdleCallback?.(idleId);
       }
       if (timeoutId !== undefined) {
         window.clearTimeout(timeoutId);
@@ -512,6 +517,25 @@ export default function Home() {
                 </button>
               );
             })}
+          </div>
+          <div className="flex flex-col justify-content items-center">
+            <p className="text-center">
+              To see more content please visit our social media pages:
+            </p>
+            <div className="flex gap-2">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={link.label}
+                  className={`px-1 py-1 transition rounded-lg ${link.wrapperStyles}`}
+                >
+                  <Icon name={link.icon} className={link.iconStyles} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>

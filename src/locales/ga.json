@@ -1,27 +1,33 @@
 {
-  "hero": {
-    "tag": "Gaeltacht Primary School",
-    "title": "Welcome to Scoil Bhríde Mionloch",
-    "lead": "An Irish-medium school with fluent staff, caring classrooms, and an active community right beside Galway city.",
-    "ctaPrimary": "Contact Us",
-    "ctaSecondary": "View Gallery"
-  },
   "nav": {
-    "ourSchool": "Our School",
-    "about": "About",
-    "downloads": "Downloads",
-    "gallery": "Gallery",
-    "contact": "Contact"
+    "ourSchool": "Ár Scoil",
+    "about": "Fúinn",
+    "downloads": "Íoslódálacha",
+    "gallery": "Gailearaí",
+    "contact": "Teagmháil"
+  },
+  "hero": {
+    "tag": "Scoil sa Ghaeltacht",
+    "title": "Fáilte go Scoil Bhríde",
+    "lead": "Scoil lán-Ghaeilge le foireann líofa, seomraí ranga comhbhácha, agus pobal gníomhach in aice le cathair na Gaillimhe.",
+    "ctaPrimary": "Teagmháil",
+    "ctaSecondary": "Féach ar an nGailearaí"
   },
   "ourSchool": {
-    "headline": "Our School",
-    "subheadline": "We are an Irish medium school situated in the village of Menlo just on the edge of Galway city.",
+    "headline": "Ár Scoil",
+    "subheadline": "Tá Scoil Bhríde suite i Mionloch, i bParóiste an Chaisleáin Gearr, díreach lasmuigh den chathair.",
     "body": [
-      "We have 8 mainstream classes and two special classes. We have a state of the art soft play yard for the junior end and an astro turf pitch for all children, which we make great use of and outside organisations train the students in GAA and Rugby. We also make use of the Áras for PE and School Events.",
-      "As a scoil sa Ghaeltacht our teaching staff are all fluent in Irish and through their teaching of, and through, the language our pupils leave with a natural ability in Gaeilge that will stand to them in secondary school. All subjects from Naíonáin Bheaga are taught through Irish except for English, which starts in term 3 in Senior Infants.",
-      "Our school is the only Irish medium Gaeltacht status school within the city bounds and benefits from extra pupil resources and support. With a wide range of after school activities, for example chess and piano, and our own pre-school learning unit, Bóín Dé, Scoil Bhríde offers the complete educational package for young children.",
-      "If you are thinking of joining our fantastic school here at Scoil Bhríde please call us on 091 323 626 and organise to meet our Príomhoide, Máire De Brún."
+      "Tá ocht rang phríomhshrutha agus dhá rang speisialta againn. Tá clós spraoi bog den scoth againn do na páistí óga agus páirc astro nua-dhéanta in aice leis an scoil, a úsáidimid do gach cineál spóirt. Bíonn seisiúin spóirt againn le clubanna CLG agus rugbaí, agus úsáidimid an tÁras le haghaidh Corpoideachais agus imeachtaí scoile.",
+
+      "Is scoil sa Ghaeltacht muid agus tá Gaeilge líofa ag gach ball foirne. Múintear gach ábhar trí Ghaeilge sna Naíonáin, seachas Béarla ó Théarma 3 i Naíonáin Mhóra. Fágann sé seo cumas nádúrtha Gaeilge ag na daltaí don mheánscoil.",
+      
+      "Is í ár scoil an t-aon scoil Ghaeilge le stádas Gaeltachta laistigh de theorainneacha na cathrach. Faigheann muid tacaíocht agus acmhainní breise. Le réimse leathan gníomhaíochtaí iarscoile agus ár naíonra féin, Bóín Dé, cuirimid pacáiste iomlán oideachais ar fáil do leanaí.",
+
+      "Má tá suim agat dul isteach i Scoil Bhríde, cuir glaoch orainn ar 091 323 626 agus eagraigh cruinniú lenár bPríomhoide, Máire De Brún."
     ]
+  },
+  "aims": {
+    
   },
   "about": {
     "heading": "About",
