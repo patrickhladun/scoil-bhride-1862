@@ -9,11 +9,15 @@ import Link from "@components/Link/Link";
 import Icon from "@components/Icon/Icon";
 
 const navItems = [
-  { id: "ourSchool", key: "ourSchool" },
-  { id: "gallery", key: "gallery" },
-  { id: "downloads", key: "downloads" },
-  { id: "contact", key: "contact" },
+  "ourSchool",
+  "gallery",
+  "downloads",
+  "newsletter",
+  "calendar",
+  "contact",
 ];
+
+const mobileNavItems = ["helpfulLinks"];
 
 const downloads = {
   policies: [
@@ -133,12 +137,23 @@ export default function Home() {
   const [lang, setLang] = useState<"ga" | "en">("en");
   const { t, i18n } = useTranslation();
   const [showSlider, setShowSlider] = useState(false);
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   useEffect(() => {
     if (i18n.language !== lang) {
       i18n.changeLanguage(lang);
     }
   }, [i18n, lang]);
+
+  useEffect(() => {
+    if (typeof document === "undefined") {
+      return;
+    }
+    document.body.style.overflow = isMobileNavOpen ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMobileNavOpen]);
 
   useEffect(() => {
     const enableSlider = () => setShowSlider(true);
@@ -190,13 +205,13 @@ export default function Home() {
               </a>
             </div>
             <nav className="hidden md:flex gap-4 text-xs font-semibold">
-              {navItems.map((item) => (
+              {navItems.map((id) => (
                 <a
-                  key={item.id}
-                  href={`#${item.id}`}
+                  key={id}
+                  href={`#${id}`}
                   className="whitespace-nowrap text-white/90 transition hover:text-white"
                 >
-                  {t(`nav.${item.key}`)}
+                  {t(`nav.${id}`)}
                 </a>
               ))}
             </nav>
@@ -231,6 +246,113 @@ export default function Home() {
               >
                 EN
               </button>
+            </div>
+            <button
+              type="button"
+              aria-label="Open navigation menu"
+              aria-controls="mobile-navigation"
+              aria-expanded={isMobileNavOpen}
+              onClick={() => setIsMobileNavOpen(true)}
+              className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition hover:border-white/60 hover:text-white"
+            >
+              <span className="sr-only">Open menu</span>
+              <div className="flex flex-col gap-1">
+                <span className="block h-0.5 w-4 rounded-full bg-white"></span>
+                <span className="block h-0.5 w-4 rounded-full bg-white"></span>
+                <span className="block h-0.5 w-4 rounded-full bg-white"></span>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          className={`fixed inset-0 z-[55] transition-opacity duration-300 md:hidden ${
+            isMobileNavOpen ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
+          aria-hidden={!isMobileNavOpen}
+        >
+          <button
+            type="button"
+            aria-label="Close navigation menu"
+            onClick={() => setIsMobileNavOpen(false)}
+            className="absolute inset-0 bg-black/40"
+          />
+          <div
+            id="mobile-navigation"
+            className={`absolute right-0 top-0 h-full w-full max-w-xs bg-primary-700 px-6 pb-8 pt-6 text-white shadow-xl transition-transform duration-300 ease-out ${
+              isMobileNavOpen ? "translate-x-0" : "translate-x-full"
+            }`}
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-semibold tracking-wide">
+                Scoil Bhríde 1862
+              </span>
+              <button
+                type="button"
+                aria-label="Close navigation menu"
+                onClick={() => setIsMobileNavOpen(false)}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white transition hover:border-white/60"
+              >
+                <span className="text-lg leading-none">×</span>
+              </button>
+            </div>
+            <div className="mt-8 space-y-4 text-sm font-semibold">
+              {navItems.map((id) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  onClick={() => setIsMobileNavOpen(false)}
+                  className="block text-white/90 transition hover:text-white"
+                >
+                  {t(`nav.${id}`)}
+                </a>
+              ))}
+              {mobileNavItems.map((id) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  onClick={() => setIsMobileNavOpen(false)}
+                  className="block text-white/90 transition hover:text-white"
+                >
+                  {t(`nav.${id}`)}
+                </a>
+              ))}
+            </div>
+            <div className="mt-8 flex gap-3">
+              <button
+                type="button"
+                onClick={() => {
+                  setLang("ga");
+                  i18n.changeLanguage("ga");
+                  setIsMobileNavOpen(false);
+                }}
+                className={`rounded-full px-4 py-2 text-xs font-semibold transition ${
+                  lang === "ga"
+                    ? "bg-white text-primary-700"
+                    : "border border-white/40 text-white"
+                }`}
+                aria-pressed={lang === "ga"}
+              >
+                GA
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setLang("en");
+                  i18n.changeLanguage("en");
+                  setIsMobileNavOpen(false);
+                }}
+                className={`rounded-full px-4 py-2 text-xs font-semibold transition ${
+                  lang === "en"
+                    ? "bg-white text-primary-700"
+                    : "border border-white/40 text-white"
+                }`}
+                aria-pressed={lang === "en"}
+              >
+                EN
+              </button>
+            </div>
+            <div className="mt-10 text-xs text-white/70">
+              Tap a section to jump to content.
             </div>
           </div>
         </div>
@@ -532,7 +654,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div>
+          <div id="calendar" className="scroll-mt-16">
             <h3>{t("links.calendar.heading")}</h3>
             <p>{t("links.calendar.subheading")}</p>
             <div className="">
@@ -544,7 +666,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="max-w-5xl mx-auto pb-16 px-8">
+        <div
+          id="helpfulLinks"
+          className="max-w-5xl mx-auto pb-16 px-8 scroll-mt-16"
+        >
           <h3>{t("links.helpful.heading")}</h3>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             {helpfulLinks.map((link) => (
