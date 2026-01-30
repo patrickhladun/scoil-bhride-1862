@@ -27,6 +27,9 @@ type GalleryProps = {
 
 const Gallery = ({ items, lightboxClassName, gridClassName }: GalleryProps) => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const maxVisibleItems = 6;
+  const visibleItems = items.slice(0, maxVisibleItems);
+  const remainingCount = Math.max(items.length - maxVisibleItems, 0);
 
   const activeItem = useMemo(() => {
     if (lightboxIndex === null) {
@@ -71,7 +74,9 @@ const Gallery = ({ items, lightboxClassName, gridClassName }: GalleryProps) => {
   return (
     <>
       <div className={mergeClasses("gallery-grid mt-8", gridClassName)}>
-        {items.map((item, index) => {
+        {visibleItems.map((item, index) => {
+          const shouldShowRemaining =
+            remainingCount > 0 && index === visibleItems.length - 1;
           if (item.type === "video") {
             return (
               <button
@@ -88,6 +93,13 @@ const Gallery = ({ items, lightboxClassName, gridClassName }: GalleryProps) => {
                   className="gallery-image"
                 />
                 <span className="gallery-play">Play</span>
+                {shouldShowRemaining && (
+                  <span className="gallery-more">
+                    <span className="gallery-more-pill">
+                      +{remainingCount}
+                    </span>
+                  </span>
+                )}
               </button>
             );
           }
@@ -106,6 +118,11 @@ const Gallery = ({ items, lightboxClassName, gridClassName }: GalleryProps) => {
                 sizes="(min-width: 768px) 33vw, 100vw"
                 className="gallery-image"
               />
+              {shouldShowRemaining && (
+                <span className="gallery-more">
+                  <span className="gallery-more-pill">+{remainingCount}</span>
+                </span>
+              )}
             </button>
           );
         })}
@@ -123,57 +140,76 @@ const Gallery = ({ items, lightboxClassName, gridClassName }: GalleryProps) => {
             aria-label="Close image preview"
             onClick={() => setLightboxIndex(null)}
           />
-          <div className="lightbox-content">
-            <button
-              type="button"
-              className="lightbox-close"
-              aria-label="Close image preview"
-              onClick={() => setLightboxIndex(null)}
-            >
-              ×
-            </button>
-            <button
-              type="button"
-              className="lightbox-nav lightbox-nav--prev"
-              aria-label="Previous image"
-              onClick={() =>
-                setLightboxIndex((prev) =>
-                  prev === null ? prev : (prev - 1 + items.length) % items.length,
-                )
-              }
-            >
-              ‹
-            </button>
-            <button
-              type="button"
-              className="lightbox-nav lightbox-nav--next"
-              aria-label="Next image"
-              onClick={() =>
-                setLightboxIndex((prev) =>
-                  prev === null ? prev : (prev + 1) % items.length,
-                )
-              }
-            >
-              ›
-            </button>
-            <div className="lightbox-image">
-              {activeItem.type === "video" ? (
-                <iframe
-                  title={activeItem.label}
-                  src={`https://player.vimeo.com/video/${activeItem.vimeoId}?autoplay=1&title=0&byline=0&portrait=0`}
-                  className="lightbox-video"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
+          <div className="lightbox-shell">
+            <div className="lightbox-content">
+              <button
+                type="button"
+                className="lightbox-close"
+                aria-label="Close image preview"
+                onClick={() => setLightboxIndex(null)}
+              >
+                ×
+              </button>
+              <button
+                type="button"
+                className="lightbox-nav lightbox-nav--prev"
+                aria-label="Previous image"
+                onClick={() =>
+                  setLightboxIndex((prev) =>
+                    prev === null
+                      ? prev
+                      : (prev - 1 + items.length) % items.length,
+                  )
+                }
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                className="lightbox-nav lightbox-nav--next"
+                aria-label="Next image"
+                onClick={() =>
+                  setLightboxIndex((prev) =>
+                    prev === null ? prev : (prev + 1) % items.length,
+                  )
+                }
+              >
+                ›
+              </button>
+              <div className="lightbox-image">
+                {activeItem.type === "video" ? (
+                  <iframe
+                    title={activeItem.label}
+                    src={`https://player.vimeo.com/video/${activeItem.vimeoId}?autoplay=1&title=0&byline=0&portrait=0`}
+                    className="lightbox-video"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : (
+                  <Image
+                    src={activeItem.src}
+                    alt={activeItem.label}
+                    fill
+                    sizes="90vw"
+                    className="lightbox-image-element"
+                  />
+                )}
+              </div>
+            </div>
+            <div className="lightbox-indicators" role="tablist">
+              {items.map((item, index) => (
+                <button
+                  key={item.type === "video" ? item.vimeoId : item.src}
+                  type="button"
+                  className={mergeClasses(
+                    "lightbox-indicator",
+                    index === lightboxIndex && "is-active",
+                  )}
+                  aria-label={`Go to item ${index + 1}`}
+                  aria-current={index === lightboxIndex}
+                  onClick={() => setLightboxIndex(index)}
                 />
-              ) : (
-                <Image
-                  src={activeItem.src}
-                  alt={activeItem.label}
-                  fill
-                  sizes="90vw"
-                  className="lightbox-image-element"
-                />
-              )}
+              ))}
             </div>
           </div>
         </div>
