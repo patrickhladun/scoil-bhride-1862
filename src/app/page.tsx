@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import "@/i18n";
+import Gallery from "@components/Gallery/Gallery";
 import Link from "@components/Link/Link";
 import Icon from "@components/Icon/Icon";
 
@@ -16,56 +17,60 @@ const navItems = [
 
 const downloads = {
   policies: [
-    { label: "Admission Policy 2025", file_name: "Admission Policy 2025.docx" },
+    { label: "Admission Policy 2025", fileName: "Admission Policy 2025.docx" },
     {
       label: "Anti Bullying Policy 2025-2026",
-      file_name: "Anti Bullying Policy Scoil Bríde 2025-2026.docx",
+      fileName: "Anti Bullying Policy Scoil Bríde 2025-2026.docx",
     },
     {
       label: "Polasaí Frith-Bhulaíocht",
-      file_name: "Polasaí Frith-Bhulaíocht.docx",
+      fileName: "Polasaí Frith-Bhulaíocht.docx",
     },
     {
       label: "Bí Cineálta Policy",
-      file_name: "Bí Cineálta Policy.docx",
+      fileName: "Bí Cineálta Policy.docx",
     },
     {
       label: "Bí Cinealta Anti‑Bullying Policy",
-      file_name:
+      fileName:
         "Bí Cinealta Policy to Prevent and Address Bullying Behaviour.docx",
     },
-    { label: "Code of Behaviour", file_name: "Code of Behaviour" },
-    { label: "CCTV Policy 2022", file_name: "CCTV Policy 2022.docx" },
+    { label: "Code of Behaviour", fileName: "Code of Behaviour" },
+    { label: "CCTV Policy 2022", fileName: "CCTV Policy 2022.docx" },
     {
       label: "Child Safeguarding Statement 25/26",
-      file_name: "Child Safeguarding Statement 25_26.docx",
+      fileName: "Child Safeguarding Statement 25_26.docx",
     },
     {
       label: "Intimate Care and Toileting Policy",
-      file_name: "Intimate Care and Toileting Policy.docx",
+      fileName: "Intimate Care and Toileting Policy.docx",
     },
     {
       label: "Health and Safety Statement 2025",
-      file_name: "Scoil Bhríde Health and Safety Statement 2025.docx",
+      fileName: "Scoil Bhríde Health and Safety Statement 2025.docx",
+    },
+    {
+      label: "GDPR and Data Protection",
+      fileName: "Eolas Tábhachtach _ Important Information.pdf",
     },
   ],
   important: [
     {
       label: "Data Protection Policy 2022",
-      file_name: "Data Protection Policy 2022.docx",
+      fileName: "Data Protection Policy 2022.docx",
     },
-    { label: "GDPR Statement 2022", file_name: "GDPR Statement 2022.docx" },
+    { label: "GDPR Statement 2022", fileName: "GDPR Statement 2022.docx" },
   ],
   enrolment: [
     {
       label: "Clárú do Scoil Bhríde Enrolment Form",
-      file_name: "Clárú do Scoil Bhríde Enrolment Form.pdf",
+      fileName: "Clárú do Scoil Bhríde Enrolment Form.pdf",
     },
-    { label: "Bóín Dé Registration Form", file_name: "Bóín Dé Reg form.pdf" },
+    { label: "Bóín Dé Registration Form", fileName: "Bóín Dé Reg form.pdf" },
   ],
   calendar: {
     label: "Calendar",
-    file_name: "Calendar 2025 - 2026.pdf",
+    fileName: "Calendar 2025 - 2026.pdf",
   },
 };
 
@@ -127,7 +132,6 @@ const downloadHref = (file: string) => encodeURI(`/downloads/${file}`);
 export default function Home() {
   const [lang, setLang] = useState<"ga" | "en">("en");
   const { t, i18n } = useTranslation();
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [showSlider, setShowSlider] = useState(false);
 
   useEffect(() => {
@@ -175,36 +179,9 @@ export default function Home() {
     };
   }, []);
 
-  useEffect(() => {
-    if (lightboxIndex === null) {
-      return;
-    }
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setLightboxIndex(null);
-      }
-      if (event.key === "ArrowRight") {
-        setLightboxIndex((prev) =>
-          prev === null ? prev : (prev + 1) % galleryItems.length,
-        );
-      }
-      if (event.key === "ArrowLeft") {
-        setLightboxIndex((prev) =>
-          prev === null
-            ? prev
-            : (prev - 1 + galleryItems.length) % galleryItems.length,
-        );
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [lightboxIndex]);
-
   return (
     <main className="min-h-screen">
-      <header className="sticky top-0 z-100 bg-primary-700">
+      <header className="sticky top-0 z-50 bg-primary-700">
         <div className="max-w-5xl mx-auto py-4 px-8">
           <div className="flex gap-8 items-center">
             <div className="text-white mr-auto">
@@ -452,46 +429,7 @@ export default function Home() {
 
       <section id="gallery" className="bg-neutral-200">
         <div className="max-w-5xl mx-auto py-16 px-8">
-          <div className="gallery-grid mt-8">
-            {galleryItems.map((item, index) => {
-              if (item.type === "video") {
-                return (
-                  <button
-                    key={item.vimeoId}
-                    type="button"
-                    className="gallery-card gallery-card--video"
-                    onClick={() => setLightboxIndex(index)}
-                  >
-                    <Image
-                      src={item.thumbnail}
-                      alt={item.label}
-                      fill
-                      sizes="(min-width: 768px) 33vw, 100vw"
-                      className="gallery-image"
-                    />
-                    <span className="gallery-play">Play</span>
-                  </button>
-                );
-              }
-
-              return (
-                <button
-                  key={item.src}
-                  type="button"
-                  className="gallery-card"
-                  onClick={() => setLightboxIndex(index)}
-                >
-                  <Image
-                    src={item.src}
-                    alt={item.label}
-                    fill
-                    sizes="(min-width: 768px) 33vw, 100vw"
-                    className="gallery-image"
-                  />
-                </button>
-              );
-            })}
-          </div>
+          <Gallery items={galleryItems} />
           <div className="flex flex-col justify-content items-center">
             <p className="text-center">{t("gallery.social")}</p>
             <div className="flex gap-2">
@@ -530,8 +468,8 @@ export default function Home() {
               <div className="mt-4 flex flex-col gap-4">
                 {downloads.policies.map((file) => (
                   <Link
-                    key={file.file_name}
-                    href={downloadHref(file.file_name)}
+                    key={file.fileName}
+                    href={downloadHref(file.fileName)}
                     label={file.label}
                     type="download"
                   />
@@ -545,8 +483,8 @@ export default function Home() {
                 <div className="mt-4 flex flex-col gap-4">
                   {downloads.important.map((file) => (
                     <Link
-                      key={file.file_name}
-                      href={downloadHref(file.file_name)}
+                      key={file.fileName}
+                      href={downloadHref(file.fileName)}
                       label={file.label}
                       type="download"
                     />
@@ -559,8 +497,8 @@ export default function Home() {
                 <div className="mt-4 flex flex-col gap-4">
                   {downloads.enrolment.map((file) => (
                     <Link
-                      key={file.file_name}
-                      href={downloadHref(file.file_name)}
+                      key={file.fileName}
+                      href={downloadHref(file.fileName)}
                       label={file.label}
                       type="download"
                     />
@@ -599,7 +537,7 @@ export default function Home() {
             <p>{t("links.calendar.subheading")}</p>
             <div className="">
               <Link
-                href={downloadHref(downloads.calendar.file_name)}
+                href={downloadHref(downloads.calendar.fileName)}
                 label={`${t("links.calendar.button")} 2025 - 2026`}
                 type="download"
               />
@@ -705,72 +643,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {lightboxIndex !== null && (
-        <div className="lightbox" role="dialog" aria-modal="true">
-          <button
-            type="button"
-            className="lightbox-backdrop"
-            aria-label="Close image preview"
-            onClick={() => setLightboxIndex(null)}
-          />
-          <div className="lightbox-content">
-            <button
-              type="button"
-              className="lightbox-close"
-              aria-label="Close image preview"
-              onClick={() => setLightboxIndex(null)}
-            >
-              ×
-            </button>
-            <button
-              type="button"
-              className="lightbox-nav lightbox-nav--prev"
-              aria-label="Previous image"
-              onClick={() =>
-                setLightboxIndex((prev) =>
-                  prev === null
-                    ? prev
-                    : (prev - 1 + galleryItems.length) % galleryItems.length,
-                )
-              }
-            >
-              ‹
-            </button>
-            <button
-              type="button"
-              className="lightbox-nav lightbox-nav--next"
-              aria-label="Next image"
-              onClick={() =>
-                setLightboxIndex((prev) =>
-                  prev === null ? prev : (prev + 1) % galleryItems.length,
-                )
-              }
-            >
-              ›
-            </button>
-            <div className="lightbox-image">
-              {galleryItems[lightboxIndex].type === "video" ? (
-                <iframe
-                  title="Scoil Bhríde video"
-                  src={`https://player.vimeo.com/video/${galleryItems[lightboxIndex].vimeoId}?autoplay=1&title=0&byline=0&portrait=0`}
-                  className="lightbox-video"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                />
-              ) : (
-                <Image
-                  src={galleryItems[lightboxIndex].src}
-                  alt="Scoil Bhríde gallery full view"
-                  fill
-                  sizes="90vw"
-                  className="lightbox-image-element"
-                />
-              )}
-            </div>
-          </div>
-        </div>
-      )}
 
       <footer className="bg-primary-950 text-white">
         <div className="max-w-5xl mx-auto py-8 px-8 text-center text-xs font-light">
