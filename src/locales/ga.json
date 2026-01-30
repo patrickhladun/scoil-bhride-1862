@@ -8,93 +8,99 @@
   },
   "hero": {
     "tag": "Scoil sa Ghaeltacht",
-    "title": "Fáilte go Scoil Bhríde",
+    "heading": "Fáilte go Scoil Bhríde",
     "lead": "Scoil lán-Ghaeilge le foireann líofa, seomraí ranga comhbhácha, agus pobal gníomhach in aice le cathair na Gaillimhe.",
     "ctaPrimary": "Teagmháil",
     "ctaSecondary": "Féach ar an nGailearaí"
   },
   "ourSchool": {
-    "headline": "Ár Scoil",
-    "subheadline": "Tá Scoil Bhríde suite i Mionloch, i bParóiste an Chaisleáin Gearr, díreach lasmuigh den chathair.",
+    "heading": "Ár Scoil",
+    "subheading": "Tá Scoil Bhríde suite i Mionloch, i bParóiste an Chaisleáin Gearr, díreach lasmuigh den chathair.",
     "body": [
-      "Tá ocht rang phríomhshrutha agus dhá rang speisialta againn. Tá clós spraoi bog den scoth againn do na páistí óga agus páirc astro nua-dhéanta in aice leis an scoil, a úsáidimid do gach cineál spóirt. Bíonn seisiúin spóirt againn le clubanna CLG agus rugbaí, agus úsáidimid an tÁras le haghaidh Corpoideachais agus imeachtaí scoile.",
+      "Tá ocht rang phríomhshrutha agus dhá rang speisialta againn. Tá clós spraoi bog den scoth againn do na páistí Naíonáin agus in aice leis an scoil tá páirc astro nua-dhéanta a bhaineann muid úsáid as le gach cineál spórt a dhéanamh. Freisin, bíonn seisiún spóirt againn le Fr.Griffins Éire Óg, Caisleán Ghearr CLG agus foireann rugbaí Corinthians. Freisin tá an Áras ar fáil le haghaidh ranganna corpoideachas agus imeachtaí scoile.",
 
-      "Is scoil sa Ghaeltacht muid agus tá Gaeilge líofa ag gach ball foirne. Múintear gach ábhar trí Ghaeilge sna Naíonáin, seachas Béarla ó Théarma 3 i Naíonáin Mhóra. Fágann sé seo cumas nádúrtha Gaeilge ag na daltaí don mheánscoil.",
-      
-      "Is í ár scoil an t-aon scoil Ghaeilge le stádas Gaeltachta laistigh de theorainneacha na cathrach. Faigheann muid tacaíocht agus acmhainní breise. Le réimse leathan gníomhaíochtaí iarscoile agus ár naíonra féin, Bóín Dé, cuirimid pacáiste iomlán oideachais ar fáil do leanaí.",
+      "Is scoil sa Ghaeltacht muid agus tá Gaeilge líofa ag gach baill den fhoireann. Múintear gach ábhar ó Naíonáin Bheaga trí Ghaeilge seachas an Béarla, a thosaíonn i dtéarma 3 sna Naíonáin Shinsearacha.",
 
-      "Má tá suim agat dul isteach i Scoil Bhríde, cuir glaoch orainn ar 091 323 626 agus eagraigh cruinniú lenár bPríomhoide, Máire De Brún."
+      "Is í an scoil seo an t-aon scoil lán-Ghaeilge le stadas na Gaeltachta laistigh de theorainneacha na cathrach agus baineann sí leas as acmhainní agus tacaíocht bhreise do dhaltaí. Le réimse leathan gníomhaíochtaí iarscoile, mar shampla fichille, pianó. Istigh sa scoil, tá fáil ar naíonra Bóín Dé. Is deis é seo a bheith tumtha sa nGaeilge i mbealach taitneamhach agus spraoíúl. Cuireann Scoil Bhríde an pacáiste iomlán oideachais ar fáil do pháistí óga.",
+
+      "Má tá suim agat i Scoil Bhríde mar scoil do do leanaí cuir glaoch orainn anseo ar (091)762323 agus freagróidh Príomhoide Máire De Brún do cheisteanna."
     ]
   },
   "aims": {
-    
-  },
-  "about": {
-    "heading": "About",
-    "intro": "Our aims and ethos as a Catholic primary school under the patronage of the Bishop of Galway.",
-    "aimsTitle": "Aims of the School",
-    "aimsBody": "The aim of Scoil Bhríde is to provide a caring, safe environment where each child can learn and achieve their highest potential. Irish is the first language of the school and families are encouraged to use Irish at home.",
-    "philosophyTitle": "School Philosophy",
-    "philosophyBody": "Scoil Náisiúnta Bhríde is a Catholic primary school. We aim to give children a sound religious and moral education within the Catholic ethos of the school.",
-    "ethosTitle": "The School Ethos",
-    "ethosBody": "We nurture pride in the Irish language, culture, history and heritage of this Gaeltacht area and we foster respect, self-discipline, and responsibility.",
-    "homeHeading": "Welcome",
-    "homeParagraphs": [
-      "Scoil Bhríde is located in Menlo, just outside Galway city. We are a Gaeltacht school and all staff are fluent in Irish. All subjects are taught through Irish from junior infants, with English starting in term 3 of senior infants.",
-      "We have a state-of-the-art soft play yard for junior pupils and an astro turf pitch used for all kinds of sport. We host training with Father Griffins Éire Óg, Caisleán Gearr CLG, and Corinthians Rugby, and we use the Áras for PE and school events.",
-      "If you are interested in Scoil Bhríde for your children, call us on (091) 762323 and our principal, Máire De Brún, will be happy to help."
+    "heading": "Aidhmeanna na Scoile",
+    "body": [
+      "Sé aidhm na scoile ná an meon dearfach a chothú i ngach páiste a thagann faoin ár gcúram. Timpeallacht chineálta, chruthaíoch, foghlamtha a chothú ar mhaithe le gach páiste. Déanann foireann na scoile a ndícheall na páistí a threorú agus dearcadh dearfach a chóthú agus a fhorbairt iontú i dtreo na teangan, an t-oideachas atá dá fháil acu agus i leith an phobail mórthimpeall. Tugtar túsáite don Ghaeilge mar phríomhtheanga cumarsáide sa scoil agus i gcomharsanacht na scoile."
     ],
-    "naionraHeading": "Naíonra Bóín Dé",
-    "naionraParagraphs": [
-      "We are committed to providing an early care and education service of the highest standard and are registered with Tusla – The Child and Family Agency. Our trained, motivated, and friendly staff deliver a warm, stimulating, home-from-home environment.",
-      "We aim to provide a quality service and a stimulating environment where children develop social, personal, and educational skills through a planned curriculum. Your child’s welfare and your peace of mind are most important to us."
+    "listHeading": "Is féidir le tuismitheoirí cabhrú lena bpáistí an teanga a fhoghlaim trí:",
+    "list": [
+      "Ag baint úsáide as aon Ghaeilge atá agat féin.",
+      "Dearcadh dearfach a bheith agat i leith na Gaeilge."
     ]
   },
+  "philosophy": {
+    "heading": "Fealsúnacht na Scoile",
+    "subheading": "Is Scoil Náisiúnta í Scoil Bhríde lena mbaineann éiteas Chaitliceach faoi phátrúntacht Easpaig Dheoise na Gaillimhe.",
+    "body": [
+      "Tá sé mar aidhm ag ár scoil oideachas fónta creidimh agus morálta a thabhairt do na páistí laistigh d'éiteas Caitliceach na scoile agus cabhrú leo creideamh a bhunú i nDia a fhásfaidh agus a fhorbróidh é. Tá éiteas Scoil Bhríde le feiceáil sa chaidreamh laethúil a bhíonn ag gach duine a oibríonn sa scoil lena chéile. Tá sé léirithe sa mheas agus sa mheas a léiríonn múinteoirí do dhaltaí agus vice versa. Táimid bródúil as na páistí atá mar chuid dár scoil agus tá súil againn go mbeidh siad ina ndaoine fásta sásúla."
+    ]
+  },
+  "ethos": {
+    "heading": "Éiteas na Scoile",
+    "body": [
+      "Sé aidhm na scoile ná timpeallacht chineálta, chruthaíoch, foghlamtha a chothú ar mhaithe le gach páiste.",
+
+      "Déanann foireann na scoile a ndícheall na páistí a threorú agus dearcadh dearfach a chóthú agus a fhorbairt iontú i dtreo na teangan, an t-oideachas atá dá fháil acu agus i leith an phobail mórthimpeall.",
+
+      "Tugtar túsáite don Ghaeilge mar phríomhtheanga cumarsáide sa scoil agus i gcomharsanacht na scoile. Tá go leor buntáisti ag baint le oideachais trí mheán na Gaeilge go mór mór sa suíomh Gaeltachta seo.",
+
+      "Tá atmaisféar teaghlaigh sa scoil le dlúthchomhoibriú idir an fhoireann, na múinteoirí, na daltaí agus na tuismitheoirí."
+    ],
+    "heading2": "Is scoil phobail í an scoil.",
+    "body2": [
+      "Is é aidhm na scoile ná a chinntiú go mbainfidh gach dalta a chuid acmhainneacht amach – go hacadúil, go sóisialta agus i bhforbairt phearsanta i bpobal dátheangach."
+    ]
+  },
+  "preschool": {
+    "heading": "Naíonra Bóín Dé",
+    "body": [
+      "Táimid tiomanta do sheirbhís luathchúraim agus oideachais den chaighdeán is airde a chur ar fáil. Táimid cláraithe le Tusla – An Ghníomhaireacht um Leanaí agus an Teaghlach. Is iad baill foirne oilte, spreagtha agus cairdiúla bunchloch ár seirbhíse.",
+      "Tá sé mar aidhm againn seirbhís ardchaighdeáin agus timpeallacht spreagúil a chur ar fáil do leanaí chun a gcuid scileanna sóisialta, pearsanta agus oideachais a fhorbairt agus foghlaim trí churaclam pleanáilte.",
+      "Tá leas do linbh agus do shuaimhneas intinne thar a bheith tábhachtach dúinn. Soláthraímid timpeallacht te, ghrámhar, baile ón mbaile, ina gcaitear le gach leanbh le meas agus ina bhforbróidh agus foghlaimeoidh sé mar dhaoine aonair agus mothaíonn siad sábháilte agus slán."
+    ]
+  },
+  "gallery": {
+    "social": "To see more content please visit our social media pages:"
+  },
   "downloads": {
-    "heading": "Downloads",
-    "lead": "Access policies, forms, and key documents below.",
-    "policiesTitle": "Policies and Forms",
-    "infoTitle": "Important Information",
-    "formsTitle": "Enrolment",
-    "enrolLead": "Download the enrolment and pre-school forms below.",
-    "newsletterTitle": "Newsletter",
-    "newsletterLead": "See below for the latest newsletter.",
-    "newsletterCta": "Open newsletter",
-    "calendarTitle": "School Calendar",
-    "calendarLead": "Click the PDF to view the latest calendar.",
-    "linksTitle": "Helpful Links"
+    "headers": [
+      "Faigh rochtain ar pholasaithe, ar fhoirmeacha agus ar cháipéisí tábhachtacha thíos.",
+      "Polasaithe agus Foirmeacha",
+      "Eolas Tábhachtach",
+      "Clárúcháin"
+    ]
   },
   "links": {
     "newsletter": {
-      "headline": "Newsletter",
-      "alt": "Click to view the latest newsletter.",
-      "button": "Open newsletter"
+      "heading": "Nuachtlitir",
+      "subheading": "Féach thíos don nuachtlitir is déanaí.",
+      "button": "Oscail an Nuachtlitir"
     },
     "calendar": {
-      "headline": "School Calendar",
-      "alt": "Click to download the latest calendar.",
-      "button": "Calendar 2025 - 2026"
+      "heading": "Féilire na Scoile",
+      "subheading": "Cliceáil an PDF chun an féilire is déanaí a fheiceáil.",
+      "button": "Féilire"
     },
     "helpful": {
-      "gaeloideachas": "Gaeloideachas",
-      "gaeilgedonteaghlach": "Gaeilge don Teaghlach",
-      "leighanois": "Léigh Anois",
-      "tg4": "TG4",
-      "irishforparents": "Irish for Parents",
-      "cogg": "COGG",
-      "gaelbhratach": "Gaelbhratach"
+      "heading": "Naisc Chabhracha"
     }
-  },
-  "gallery": {
-    "heading": "Gallery"
   },
   "contact": {
     "heading": "Contact",
     "lead": "We would love to hear from you.",
-    "principalLabel": "Principal",
-    "addressLabel": "Address",
-    "contactLabel": "Contact",
-    "support": "Support our school.",
-    "follow": "Follow us online."
+    "principal": "Príomhoide",
+    "address": "Seoladh",
+    "contact": "Teagmháil",
+    "support": "Tacaigh lenár scoil.",
+    "follow": "Lean muid ar líne."
   }
 }

@@ -8,58 +8,76 @@
   },
   "hero": {
     "tag": "Gaeltacht Primary School",
-    "heading1": "Welcome to Scoil Bhríde Menlo",
+    "heading": "Welcome to Scoil Bhríde",
     "lead": "An Irish-medium school with fluent staff, caring classrooms, and an active community right beside Galway city.",
     "ctaPrimary": "Contact Us",
     "ctaSecondary": "View Gallery"
   },
   "ourSchool": {
-    "heading2": "Our School",
-    "subheading2": "We are an Irish medium school situated in the village of Menlo just on the edge of Galway city.",
-    "body2": [
-      "We have 8 mainstream classes and two special classes. We have a state of the art soft play yard for the junior end and an astro turf pitch for all children, which we make great use of and outside organisations train the students in GAA and Rugby. We also make use of the Áras for PE and School Events.",
+    "heading": "Our School",
+    "subheading": "We are an Irish medium school situated in the village of Menlo just on the edge of Galway city.",
+    "body": [
+      "We have 8 mainstream classes and two special classes. We have a state of the art soft play yard for the junior end and an astro turf pitch for all children, which we make great use of and outside organisations like Fr.Griffins Éire Óg, Caisleán Ghearr CLG  and Corinthians train the students in GAA and Rugby. We also make use of the Áras for PE and School Events.",
+
       "As a scoil sa Ghaeltacht our teaching staff are all fluent in Irish and through their teaching of, and through, the language our pupils leave with a natural ability in Gaeilge that will stand to them in secondary school. All subjects from Naíonáin Bheaga are taught through Irish except for English, which starts in term 3 in Senior Infants.",
+
       "Our school is the only Irish medium Gaeltacht status school within the city bounds and benefits from extra pupil resources and support. With a wide range of after school activities, for example chess and piano, and our own pre-school learning unit, Bóín Dé, Scoil Bhríde offers the complete educational package for young children.",
+
       "If you are thinking of joining our fantastic school here at Scoil Bhríde please call us on 091 323 626 and organise to meet our Príomhoide, Máire De Brún."
     ]
   },
   "aims": {
-    "heading2": "Aims of the School",
-    "body2": [
+    "heading": "Aims of the School",
+    "body": [
       "The aim of Scoil Bhríde is to provide a caring and safe environment in which the children can learn. The school staff will encourage each child to achieve their highest potential, both educationally and emotionally. Scoil Bhríde is a Gaeltacht school. Irish is the first language of the school."
     ],
     "listHeading": "Parents can help their children learn the language by:",
-    "listItems": [
+    "list": [
       "Using any Irish you have yourselves.",
       "Having a positive attitude towards the Irish Language."
     ]
   },
   "philosophy": {
-    "heading2": "School Philosophy",
-    "subheading2": "Scoil Náisiúnta Bhríde, is a Catholic Primary School run under the patronage of the Bishop of Galway.",
-    "body2": [
+    "heading": "School Philosophy",
+    "subheading": "Scoil Náisiúnta Bhríde, is a Catholic Primary School run under the patronage of the Bishop of Galway.",
+    "body": [
       "Our school aims to give the children a sound religious and moral education within the established Catholic ethos of the school and to help them establish a faith in God which will grow and develop. The ethos of Scoil Bhríde can be seen in the everyday dealings all those who work in the school have with each other. It is manifested in the respect and consideration shown by teachers to pupils and vice versa. We are proud of the children who are part of our school and hope they go on to become fulfilled adults."
     ]
   },
   "ethos": {
-    "heading2": "The School Ethos",
-    "body2": [
+    "heading": "The School Ethos",
+    "body": [
       "Since the school is a bilingual school, it is expected that both parents and pupils are enthusiastic about education through the medium of Irish. It is expected that pupils show respect and pride in the Irish language by using it constantly inside and outside the classroom.",
+
       "We strive to engender a pride in the pupils for the language, culture, history and heritage of this Gaeltacht area. We do our best to instill in the pupils a respect for people and property so that we live in a civilised and tolerant society. We also try to nurture personal virtues in the pupils, virtues such as courtesy, honesty, perseverance and conscientiousness amongst others.",
+
       "The importance of providing equal opportunities for every child regardless of their ability, age or linguistic background is emphasised. High standards of discipline are maintained in the school which are reflected in the appearance and behaviour of the pupils. We believe that the most effective way of maintaining discipline is by fostering self-discipline and a responsible attitude among the pupils.",
+
       "There is a family atmosphere in the school with close co-operation between the staff, teachers, pupils and parents."
     ],
-    "heading3": "Home-School Partnership",
-    "body3": [
+    "heading2": "The school is a community school.",
+    "body2": [
       "The aim of the school is to ensure that every pupil achieves his/her true potential – academically, socially, and in personal development in a bilingual community."
+    ]
+  },
+  "preschool": {
+    "heading": "Pre-school Bóin Dé",
+    "body": [
+      "We are committed to providing an early care and education service of the highest standard. We are registered with Tusla – The Child and Family Agency. Trained, motivated and friendly staff are the cornerstone of our service.",
+      "We aim to provide a quality service and a stimulating environment for children to develop their social, personal and educational skills and learn through a planned curriculum.",
+      "Your child’s welfare and your peace of mind is most important to us. We provide a warm, loving, home-from-home environment, where each child is treated with respect and will develop and learn as individuals while feeling safe and secure."
     ]
   },
   "gallery": {
     "social": "To see more content please visit our social media pages:"
   },
   "downloads": {
-    "header2": "Access policies, forms, and key documents below.",
-    "headers3": ["Policies and Forms", "Important Information", "Enrolment"]
+    "headers": [
+      "Access policies, forms, and key documents below.",
+      "Policies and Forms",
+      "Important Information",
+      "Enrolment"
+    ]
   },
   "links": {
     "newsletter": {
@@ -70,7 +88,7 @@
     "calendar": {
       "heading": "School Calendar",
       "subheading": "Click to download the latest calendar.",
-      "button": "Calendar 2025 - 2026"
+      "button": "Calendar"
     },
     "helpful": {
       "heading": "Helpful Links"
@@ -79,9 +97,9 @@
   "contact": {
     "heading": "Contact",
     "lead": "We would love to hear from you.",
-    "principalLabel": "Principal",
-    "addressLabel": "Address",
-    "contactLabel": "Contact",
+    "principal": "Principal",
+    "address": "Address",
+    "contact": "Contact",
     "support": "Support our school.",
     "follow": "Follow us online."
   }

@@ -88,13 +88,13 @@ const socialLinks = [
 ];
 
 const helpfulLinks = [
-  { key: "gaeloideachas", href: "https://gaeloideachas.ie/" },
-  { key: "gaeilgedonteaghlach", href: "https://gaeilgedonteaghlach.com/" },
-  { key: "leighanois", href: "https://www.leighanois.com/canuint.php" },
-  { key: "tg4", href: "https://www.tg4.ie/ga/" },
-  { key: "irishforparents", href: "https://irishforparents.ie/" },
-  { key: "cogg", href: "https://cogg.ie/" },
-  { key: "gaelbhratach", href: "https://gaelbhratach.ie/" },
+  { label: "Gaeloideachas", href: "https://gaeloideachas.ie/" },
+  { label: "Gaeilge don Teaghlach", href: "https://gaeilgedonteaghlach.com/" },
+  { label: "Léigh Anois", href: "https://www.leighanois.com/canuint.php" },
+  { label: "TG4", href: "https://www.tg4.ie/ga/" },
+  { label: "Irish for Parents", href: "https://irishforparents.ie/" },
+  { label: "COGG", href: "https://cogg.ie/" },
+  { label: "Gaelbhratach", href: "https://gaelbhratach.ie/" },
 ];
 
 const images = [
@@ -297,7 +297,7 @@ export default function Home() {
               />
               <div>
                 <p>{t("hero.tag")}</p>
-                <h1 className="text-white">{t("hero.title")}</h1>
+                <h1 className="text-white">{t("hero.heading")}</h1>
                 <p>{t("hero.lead")}</p>
               </div>
               <div>
@@ -343,8 +343,8 @@ export default function Home() {
 
       <section id="ourSchool" className="bg-neutral-100">
         <div className="max-w-3xl mx-auto pt-16 pb-2 px-8">
-          <h2>{t("ourSchool.headline")}</h2>
-          <p className="h5 text-primary-900">{t("ourSchool.subheadline")}</p>
+          <h2>{t("ourSchool.heading")}</h2>
+          <p className="h5 text-primary-900">{t("ourSchool.subheading")}</p>
           <p>{t("ourSchool.body.0")}</p>
           <p>{t("ourSchool.body.1")}</p>
           <p>{t("ourSchool.body.2")}</p>
@@ -352,7 +352,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="bg-tertiary-500">
+      <div className="bg-tertiary-600">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 129.25">
           <path
             className="fill-neutral-100"
@@ -361,26 +361,18 @@ export default function Home() {
         </svg>
       </div>
 
-      <section id="aims" className="bg-tertiary-500">
+      <section id="aims" className="bg-tertiary-600">
         <div className="max-w-5xl mx-auto pt-6 pb-2 px-8 text-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h2 className="text-white">Aims of the School</h2>
-              <p>
-                The aim of Scoil Bhríde is to provide a caring and safe
-                environment in which the children can learn. The school staff
-                will encourage each child to achieve their highest potential,
-                both educationally and emotionally. Scoil Bhríde is a Gaeltacht
-                school. Irish is the first language of the school.
-              </p>
+              <h2 className="text-white">{t("aims.heading")}</h2>
+              <p>{t("aims.body.0")}</p>
             </div>
             <div>
-              <h3 className="h5 text-white">
-                Parents can help their children learn the language by:
-              </h3>
+              <h3 className="h5 text-white">{t("aims.listHeading")}</h3>
               <ul>
-                <li>Using any Irish you have yourselves.</li>
-                <li>Having a positive attitude towards the Irish Language.</li>
+                <li>{t("aims.list.0")}</li>
+                <li>{t("aims.list.1")}</li>
               </ul>
             </div>
           </div>
@@ -390,7 +382,7 @@ export default function Home() {
       <div className="bg-secondary-700">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 74.75">
           <path
-            className="fill-tertiary-500"
+            className="fill-tertiary-600"
             d="M1200,24.48V0s-1200,0-1200,0c0,0,0,44.41,0,47.12,40.96,15.92,52.62,25.4,103.67,27.57,31.95,1.36,79.61-20.21,126.1-22.33,39.08-1.78,81.2,22.35,113.51,22.39,37.15-.03,56.75-39.17,114.35-45.26,42.55-4.5,94.24,27.45,136.38,26.26,41.13-1.16,75.08-20.55,116.03-20.55,44.22,0,86.61,17.42,122.84,22.25s88.43-2.8,115.2-21.86c28.58-20.35,79.3-32.78,116.05-27.27,50.58,7.59,58.6,18.54,135.88,16.16Z"
           />
         </svg>
@@ -399,21 +391,9 @@ export default function Home() {
       <section id="philosophy" className="bg-secondary-700">
         <div className="max-w-3xl mx-auto pt-16 pb-2 px-8 text-white">
           <div className="">
-            <h2 className="text-white">School Philosophy</h2>
-            <p>
-              Scoil Náisiúnta Bhríde, is a Catholic Primary School run under the
-              patronage of the Bishop of Galway.
-            </p>
-            <p>
-              Our school aims to give the children a sound religious and moral
-              education within the established Catholic ethos of the school and
-              to help them establish a faith in God which will grow and develop.
-              The ethos of Scoil Bhríde can be seen in the everyday dealings all
-              those who work in the school have with each other. It is
-              manifested in the respect and consideration shown by teachers to
-              pupils and vice versa. We are proud of the children who are part
-              of our school and hope they go on to become fulfilled adults.
-            </p>
+            <h2 className="text-white">{t("philosophy.heading")}</h2>
+            <p>{t("philosophy.subheading")}</p>
+            <p>{t("philosophy.body.0")}</p>
           </div>
         </div>
       </section>
@@ -428,49 +408,41 @@ export default function Home() {
       </div>
 
       <section id="ethos" className="bg-primary-700">
-        <div className="max-w-3xl mx-auto py-16 px-8 text-white">
-          <h2 className="text-white">The School Ethos</h2>
-          <p>
-            Since the school is a bilingual school, it is expected that both
-            parents and pupils are enthusiastic about education through the
-            medium of Irish. It is expected that pupils show respect and pride
-            in the Irish language by using it constantly inside and outside the
-            classroom.
-          </p>
-          <p>
-            We strive to engender a pride in the pupils for the language,
-            culture, history and heritage of this Gaeltacht area. We do our best
-            to instill in the pupils a respect for people and property so that
-            we live in a civilised and tolerant society. We also try to nurture
-            personal virtues in the pupils, virtues such as courtesy, honesty,
-            perseverance and conscientiousness amongst others.
-          </p>
-          <p>
-            The importance of providing equal opportunities for every child
-            regardless of their ability, age or linguistic background is
-            emphasised. High standards of discipline are maintained in the
-            school which are reflected in the appearance and behaviour of the
-            pupils. We believe that the most effective way of maintaining
-            discipline is by fostering self-discipline and a responsible
-            attitude among the pupils.
-          </p>
-          <p>
-            There is a family atmosphere in the school with close co-operation
-            between the staff, teachers, pupils and parents.
-          </p>
-          <h3 className="text-white">The school is a community school.</h3>
-          <p>
-            The aim of the school is to ensure that every pupil achieves his/her
-            true potential – academically, socially, and in personal development
-            in a bilingual community.
-          </p>
+        <div className="max-w-3xl mx-auto pt-16 pb-8 px-8 text-white">
+          <h2 className="text-white">{t("ethos.heading")}</h2>
+          <p>{t("ethos.body.0")}</p>
+          <p>{t("ethos.body.1")}</p>
+          <p>{t("ethos.body.2")}</p>
+          <p>{t("ethos.body.3")}</p>
+          <h3 className="text-white">{t("ethos.heading2")}</h3>
+          <p>{t("ethos.body2.0")}</p>
+        </div>
+      </section>
+
+      <div className="bg-tertiary-600">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 129.25">
+          <path
+            className="fill-primary-700"
+            d="M0,46.5V0h1200s0,10.75,0,69.14c-40.96,15.92-52.62,25.4-103.67,27.57-31.95,1.36-91.15-15.68-135.64-6.15-38.25,8.2-50.85,39.04-85.01,38.93-39.72.11-52.43-66.71-102.85-82.34-40.29-12.49-124.33,43.83-166.47,42.64-41.13-1.16-75.44-32.57-116.39-32.57-44.22,0-82.54,32.51-118.77,37.34s-80.84-18.27-107.61-37.34C235.01,36.87,172.56-8.32,125.1,10.75,77.64,29.82,77.27,48.88,0,46.5Z"
+          />
+        </svg>
+      </div>
+
+      <section id="preschool" className="bg-tertiary-600">
+        <div className="max-w-3xl mx-auto pt-2 pb-8 px-8 text-white">
+          <div className="">
+            <h2 className="text-white">{t("preschool.heading")}</h2>
+            <p>{t("preschool.body.0")}</p>
+            <p>{t("preschool.body.1")}</p>
+            <p>{t("preschool.body.2")}</p>
+          </div>
         </div>
       </section>
 
       <div className="bg-neutral-200">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 88.09">
           <path
-            className="fill-primary-700"
+            className="fill-tertiary-600"
             d="M0,31.34V0h1200v18.13c-67.13,21.53-73.48,36.08-110.75,36.08-32.62,0-105.44-51.04-149.93-41.51-38.25,8.2-109.6,47.57-159.25,52.44-39.72.11-129.83-18.09-160.94-14.32-27.95,3.39-88.66,37.27-129.6,37.27-44.22,0-91.67-62.43-127.91-57.6s-70.41,17.22-95.3,4.93c-23.01-11.36-69.87-29.5-102.07-29.5C130.38,5.93,77.27,33.72,0,31.34Z"
           />
         </svg>
@@ -519,9 +491,7 @@ export default function Home() {
             })}
           </div>
           <div className="flex flex-col justify-content items-center">
-            <p className="text-center">
-              To see more content please visit our social media pages:
-            </p>
+            <p className="text-center">{t("gallery.social")}</p>
             <div className="flex gap-2">
               {socialLinks.map((link) => (
                 <a
@@ -551,10 +521,10 @@ export default function Home() {
 
       <section id="downloads" className="bg-neutral-100">
         <div className="max-w-5xl mx-auto py-16 px-8">
-          <h2>{t("downloads.lead")}</h2>
+          <h2>{t("downloads.headers.0")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
             <div>
-              <h3>{t("downloads.policiesTitle")}</h3>
+              <h3>{t("downloads.headers.1")}</h3>
               <div className="mt-4 flex flex-col gap-4">
                 {policyDownloads.map((file) => (
                   <Link
@@ -569,7 +539,7 @@ export default function Home() {
 
             <div>
               <div>
-                <h3>{t("downloads.infoTitle")}</h3>
+                <h3>{t("downloads.headers.2")}</h3>
                 <div className="mt-4 flex flex-col gap-4">
                   {infoDownloads.map((file) => (
                     <Link
@@ -583,7 +553,7 @@ export default function Home() {
               </div>
 
               <div>
-                <h3>{t("downloads.formsTitle")}</h3>
+                <h3>{t("downloads.headers.3")}</h3>
                 <div className="mt-4 flex flex-col gap-4">
                   {formDownloads.map((file) => (
                     <Link
@@ -612,36 +582,36 @@ export default function Home() {
       <section id="newsletter" className="bg-neutral-200">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 py-16 px-8 gap-4">
           <div>
-            <h3>{t("downloads.newsletterTitle")}</h3>
-            <p>{t("downloads.newsletterLead")}</p>
+            <h3>{t("links.newsletter.heading")}</h3>
+            <p>{t("links.newsletter.subheading")}</p>
             <div className="mt-4">
               <Link
                 href="https://sites.google.com/scoilbhride1862.ie/nuachtlitreacha23-24/home"
-                label={t("downloads.newsletterCta")}
+                label={t("links.newsletter.button")}
                 type="external"
               />
             </div>
           </div>
           <div>
-            <h3>{t("downloads.calendarTitle")}</h3>
-            <p>{t("downloads.calendarLead")}</p>
+            <h3>{t("links.calendar.heading")}</h3>
+            <p>{t("links.calendar.subheading")}</p>
             <div className="">
               <Link
                 href={downloadHref(calendarDownload.file_name)}
-                label={calendarDownload.label}
+                label={`${t("links.calendar.button")} 2025 - 2026`}
                 type="download"
               />
             </div>
           </div>
         </div>
         <div className="max-w-5xl mx-auto pb-16 px-8">
-          <h3>{t("downloads.linksTitle")}</h3>
+          <h3>{t("links.helpful.heading")}</h3>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             {helpfulLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                label={t(`links.helpful.${link.key}`)}
+                label={link.label}
                 type="external"
               />
             ))}
@@ -663,9 +633,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
             <div className="">
               <div className="contact-card rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                <h3 className="h6 mb-0">Principal</h3>
+                <h3 className="h6 mb-0">{t("contact.principal")}</h3>
                 <p className="mt-0">Máire de Brún</p>
-                <h3 className="h6 mb-0">Address</h3>
+                <h3 className="h6 mb-0">{t("contact.address")}</h3>
                 <p className="mt-0">
                   Scoil Bhríde,
                   <br />
@@ -675,7 +645,7 @@ export default function Home() {
                   <br />
                   H91 YD63
                 </p>
-                <h3 className="h6 mb-0">Contact</h3>
+                <h3 className="h6 mb-0">{t("contact.contact")}</h3>
                 <p className="mt-0">
                   <span>
                     <a href="mailto:runai@scoilbhride1862.ie">
@@ -697,7 +667,7 @@ export default function Home() {
                   width={140}
                   height={140}
                 />
-                <h3 className="h6 mb-0">Support our school.</h3>
+                <h3 className="h6 mb-0">{t("contact.support")}</h3>
                 <a
                   href="https://www.ourfundraiser.ie/org/scoilbhride1862"
                   target="_blank"
@@ -713,7 +683,7 @@ export default function Home() {
                 </a>
               </div>
               <div>
-                <h3 className="h6">Follow us online.</h3>
+                <h3 className="h6">{t("contact.follow")}</h3>
                 <div className="flex gap-2">
                   {socialLinks.map((link) => (
                     <a
