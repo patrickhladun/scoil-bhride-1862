@@ -803,7 +803,13 @@ export default function Home() {
         <div className="max-w-5xl mx-auto py-8 px-8 text-center text-xs font-light">
           <p className="my-0 text-sm">
             © {new Date().getFullYear()} Scoil Bhríde Menlo. All rights
-            reserved. | Designed by Cityweb
+            reserved. |{" "}
+            <a
+              className="text-secondary-200 hover:text-secondary-400"
+              href="https://www.cityweb.ie/school-website-design/"
+            >
+              Designed by Cityweb
+            </a>
           </p>
         </div>
       </footer>

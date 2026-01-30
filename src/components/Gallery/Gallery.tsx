@@ -80,27 +80,25 @@ const Gallery = ({ items, lightboxClassName, gridClassName }: GalleryProps) => {
           const shouldShowRemaining =
             remainingCount > 0 && index === visibleItems.length - 1;
           if (item.type === "video") {
-          return (
-            <button
-              key={item.vimeoId}
-              type="button"
-              className="gallery-card gallery-card--video"
-              onClick={() => setLightboxIndex(index)}
-            >
-              <Image
-                src={item.thumbnail}
-                alt={item.label}
-                fill
-                loading="lazy"
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="gallery-image"
-              />
-              <span className="gallery-play">Play</span>
+            return (
+              <button
+                key={item.vimeoId}
+                type="button"
+                className="gallery-card gallery-card--video"
+                onClick={() => setLightboxIndex(index)}
+              >
+                <Image
+                  src={item.thumbnail}
+                  alt={item.label}
+                  fill
+                  loading="lazy"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="gallery-image"
+                />
+                <span className="gallery-play">Play</span>
                 {shouldShowRemaining && (
                   <span className="gallery-more">
-                    <span className="gallery-more-pill">
-                      +{remainingCount}
-                    </span>
+                    <span className="gallery-more-pill">+{remainingCount}</span>
                   </span>
                 )}
               </button>
