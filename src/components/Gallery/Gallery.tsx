@@ -27,6 +27,7 @@ type GalleryProps = {
 
 const Gallery = ({ items, lightboxClassName, gridClassName }: GalleryProps) => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [isLightboxLoading, setIsLightboxLoading] = useState(false);
   const maxVisibleItems = 6;
   const visibleItems = items.slice(0, maxVisibleItems);
   const remainingCount = Math.max(items.length - maxVisibleItems, 0);
@@ -50,6 +51,7 @@ const Gallery = ({ items, lightboxClassName, gridClassName }: GalleryProps) => {
     if (lightboxIndex === null || items.length === 0) {
       return;
     }
+    setIsLightboxLoading(true);
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -78,21 +80,22 @@ const Gallery = ({ items, lightboxClassName, gridClassName }: GalleryProps) => {
           const shouldShowRemaining =
             remainingCount > 0 && index === visibleItems.length - 1;
           if (item.type === "video") {
-            return (
-              <button
-                key={item.vimeoId}
-                type="button"
-                className="gallery-card gallery-card--video"
-                onClick={() => setLightboxIndex(index)}
-              >
-                <Image
-                  src={item.thumbnail}
-                  alt={item.label}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="gallery-image"
-                />
-                <span className="gallery-play">Play</span>
+          return (
+            <button
+              key={item.vimeoId}
+              type="button"
+              className="gallery-card gallery-card--video"
+              onClick={() => setLightboxIndex(index)}
+            >
+              <Image
+                src={item.thumbnail}
+                alt={item.label}
+                fill
+                loading="lazy"
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="gallery-image"
+              />
+              <span className="gallery-play">Play</span>
                 {shouldShowRemaining && (
                   <span className="gallery-more">
                     <span className="gallery-more-pill">
@@ -115,6 +118,7 @@ const Gallery = ({ items, lightboxClassName, gridClassName }: GalleryProps) => {
                 src={item.src}
                 alt={item.label}
                 fill
+                loading="lazy"
                 sizes="(min-width: 768px) 33vw, 100vw"
                 className="gallery-image"
               />
@@ -177,6 +181,11 @@ const Gallery = ({ items, lightboxClassName, gridClassName }: GalleryProps) => {
                 ›
               </button>
               <div className="lightbox-image">
+                {isLightboxLoading && (
+                  <div className="lightbox-loader" aria-live="polite">
+                    Loading…
+                  </div>
+                )}
                 {activeItem.type === "video" ? (
                   <iframe
                     title={activeItem.label}
@@ -184,6 +193,7 @@ const Gallery = ({ items, lightboxClassName, gridClassName }: GalleryProps) => {
                     className="lightbox-video"
                     allow="autoplay; fullscreen; picture-in-picture"
                     allowFullScreen
+                    onLoad={() => setIsLightboxLoading(false)}
                   />
                 ) : (
                   <Image
@@ -192,6 +202,7 @@ const Gallery = ({ items, lightboxClassName, gridClassName }: GalleryProps) => {
                     fill
                     sizes="90vw"
                     className="lightbox-image-element"
+                    onLoadingComplete={() => setIsLightboxLoading(false)}
                   />
                 )}
               </div>

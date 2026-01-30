@@ -366,6 +366,20 @@
   aspect-ratio: 16 / 10;
 }
 
+.lightbox-loader {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(2px);
+}
+
 .lightbox-image-element {
   object-fit: cover;
 }
