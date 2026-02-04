@@ -105,8 +105,8 @@ const helpfulLinks = [
   { label: "Gaelbhratach", href: "https://gaelbhratach.ie/" },
 ];
 const sliderImages = [
-  "/assets/gallery/gallery-d8uw.webp",
   "/assets/gallery/gallery-dt3s.webp",
+  "/assets/gallery/gallery-ck82.webp",
   "/assets/gallery/gallery-gbdh.webp",
   "/assets/gallery/gallery-gs5t.webp",
 ];
@@ -415,7 +415,7 @@ export default function Home() {
               />
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-primary-900/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-primary-900" />
           <div className="absolute inset-0 bg-gradient-to-r from-white/40 to-transparent opacity-40" />
           <div className="relative max-w-5xl mx-auto flex px-8">
             <div className="flex flex-col md:w-[50%]">
