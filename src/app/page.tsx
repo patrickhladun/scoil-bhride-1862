@@ -21,59 +21,90 @@ const mobileNavItems = ["helpfulLinks"];
 
 const downloads = {
   policies: [
-    { label: "Admission Policy 2025", fileName: "Admission Policy 2025.docx" },
     {
-      label: "Anti Bullying Policy 2025-2026",
-      fileName: "Anti Bullying Policy Scoil Bríde 2025-2026.docx",
+      en: "Admission Policy 2025",
+      ga: "Admission Policy 2025",
+      fileName: "Admission Policy 2025.pdf",
     },
     {
-      label: "Polasaí Frith-Bhulaíocht",
-      fileName: "Polasaí Frith-Bhulaíocht.docx",
+      en: "Anti Bullying Policy 2025-2026",
+      ga: "Anti Bullying Policy 2025-2026",
+      fileName: "Anti Bullying Policy Scoil Bríde 2025-2026.pdf",
     },
     {
-      label: "Bí Cineálta Policy",
-      fileName: "Bí Cineálta Policy.docx",
+      en: "Polasaí Frith-Bhulaíocht",
+      ga: "Polasaí Frith-Bhulaíocht",
+      fileName: "Polasaí Frith-Bhulaíocht.pdf",
     },
     {
-      label: "Bí Cinealta Anti‑Bullying Policy",
+      en: "Bí Cineálta Policy",
+      ga: "Bí Cineálta Policy",
+      fileName: "Bí Cineálta Policy.pdf",
+    },
+    {
+      en: "Bí Cinealta Anti‑Bullying Policy",
+      ga: "Bí Cinealta Anti‑Bullying Policy",
       fileName:
-        "Bí Cinealta Policy to Prevent and Address Bullying Behaviour.docx",
-    },
-    { label: "Code of Behaviour", fileName: "Code of Behaviour" },
-    { label: "CCTV Policy 2022", fileName: "CCTV Policy 2022.docx" },
-    {
-      label: "Child Safeguarding Statement 25/26",
-      fileName: "Child Safeguarding Statement 25_26.docx",
+        "Bí Cinealta Policy to Prevent and Address Bullying Behaviour.pdf",
     },
     {
-      label: "Intimate Care and Toileting Policy",
-      fileName: "Intimate Care and Toileting Policy.docx",
+      en: "Code of Behaviour",
+      ga: "Code of Behaviour",
+      fileName: "Code of Behaviour.pdf",
     },
     {
-      label: "Health and Safety Statement 2025",
-      fileName: "Scoil Bhríde Health and Safety Statement 2025.docx",
+      en: "CCTV Policy 2022",
+      ga: "CCTV Policy 2022",
+      fileName: "CCTV Policy 2022.pdf",
     },
     {
-      label: "GDPR and Data Protection",
-      fileName: "Eolas Tábhachtach _ Important Information.pdf",
+      en: "Child Safeguarding Statement 25/26",
+      ga: "Child Safeguarding Statement 25/26",
+      fileName: "Child Safeguarding Statement 25_26.pdf",
+    },
+    {
+      en: "Intimate Care and Toileting Policy",
+      ga: "Intimate Care and Toileting Policy",
+      fileName: "Intimate Care and Toileting Policy.pdf",
+    },
+    {
+      en: "Health and Safety Statement 2025",
+      ga: "Health and Safety Statement 2025",
+      fileName: "Scoil Bhríde Health and Safety Statement 2025.pdf",
+    },
+    {
+      en: "Data Protection Policy 2022",
+      ga: "Data Protection Policy 2022",
+      fileName: "Data Protection Policy 2022.pdf",
+    },
+    {
+      en: "GDPR Statement 2022",
+      ga: "GDPR Statement 2022",
+      fileName: "GDPR Statement 2022.pdf",
     },
   ],
   important: [
     {
-      label: "Data Protection Policy 2022",
-      fileName: "Data Protection Policy 2022.docx",
+      en: "Important Information",
+      ga: "Eolas Tábhachtach",
+      fileName: "Eolas Tábhachtach _ Important Information.pdf",
     },
-    { label: "GDPR Statement 2022", fileName: "GDPR Statement 2022.docx" },
   ],
   enrolment: [
     {
-      label: "Clárú do Scoil Bhríde Enrolment Form",
+      en: "Clárú do Scoil Bhríde Enrolment Form",
+      ga: "Clárú do Scoil Bhríde Enrolment Form",
       fileName: "Clárú do Scoil Bhríde Enrolment Form.pdf",
     },
-    { label: "Bóín Dé Registration Form", fileName: "Bóín Dé Reg form.pdf" },
+    {
+      en: "Bóín Dé Registration Form",
+      ga: "Bóín Dé Registration Form",
+      fileName: "Bóín Dé Reg form.pdf",
+    },
   ],
   calendar: {
-    label: "Calendar",
+    en: "Calendar",
+    ga: "Calendar",
     fileName: "Calendar 2025 - 2026.pdf",
   },
 };
@@ -152,6 +183,8 @@ export default function Home() {
   const [showSlider, setShowSlider] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const hasInitializedLanguage = useRef(false);
+  const downloadLabel = (file: { en: string; ga: string }) =>
+    t(lang === "ga" ? file.ga : file.en);
 
   useEffect(() => {
     if (hasInitializedLanguage.current) {
@@ -614,50 +647,41 @@ export default function Home() {
       <section id="downloads" className="bg-neutral-100">
         <div className="max-w-5xl mx-auto py-16 px-8">
           <h2>{t("downloads.headers.0")}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-            <div>
-              <h3>{t("downloads.headers.1")}</h3>
-              <div className="mt-4 flex flex-col gap-4">
-                {downloads.policies.map((file) => (
-                  <Link
-                    key={file.fileName}
-                    href={downloadHref(file.fileName)}
-                    label={file.label}
-                    type="download"
-                  />
-                ))}
-              </div>
-            </div>
 
-            <div>
-              <div>
-                <h3>{t("downloads.headers.2")}</h3>
-                <div className="mt-4 flex flex-col gap-4">
-                  {downloads.important.map((file) => (
-                    <Link
-                      key={file.fileName}
-                      href={downloadHref(file.fileName)}
-                      label={file.label}
-                      type="download"
-                    />
-                  ))}
-                </div>
-              </div>
+          <h3>{t("downloads.headers.1")}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            {downloads.policies.map((file) => (
+              <Link
+                key={file.fileName}
+                href={downloadHref(file.fileName)}
+                label={downloadLabel(file)}
+                type="download"
+              />
+            ))}
+          </div>
 
-              <div>
-                <h3>{t("downloads.headers.3")}</h3>
-                <div className="mt-4 flex flex-col gap-4">
-                  {downloads.enrolment.map((file) => (
-                    <Link
-                      key={file.fileName}
-                      href={downloadHref(file.fileName)}
-                      label={file.label}
-                      type="download"
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
+          <h3>{t("downloads.headers.2")}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            {downloads.important.map((file) => (
+              <Link
+                key={file.fileName}
+                href={downloadHref(file.fileName)}
+                label={downloadLabel(file)}
+                type="download"
+              />
+            ))}
+          </div>
+
+          <h3>{t("downloads.headers.3")}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            {downloads.enrolment.map((file) => (
+              <Link
+                key={file.fileName}
+                href={downloadHref(file.fileName)}
+                label={downloadLabel(file)}
+                type="download"
+              />
+            ))}
           </div>
         </div>
       </section>
