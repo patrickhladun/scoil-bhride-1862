@@ -87,7 +87,7 @@ const downloads = {
     {
       en: "Important Information",
       ga: "Eolas Tábhachtach",
-      fileName: "Eolas Tábhachtach _ Important Information.pdf",
+      fileName: "Eolas Tábhachtach _ Important Information Scoil Bhríde.pdf",
     },
   ],
   enrolment: [
