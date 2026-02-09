@@ -7,6 +7,7 @@ import "@/i18n";
 import Gallery from "@components/Gallery/Gallery";
 import Link from "@components/Link/Link";
 import Icon from "@components/Icon/Icon";
+import { downloads } from "./downloads/data";
 
 const navItems = [
   "ourSchool",
@@ -19,95 +20,6 @@ const navItems = [
 
 const mobileNavItems = ["helpfulLinks"];
 
-const downloads = {
-  policies: [
-    {
-      en: "Admission Policy 2025",
-      ga: "Admission Policy 2025",
-      fileName: "Admission Policy 2025.pdf",
-    },
-    {
-      en: "Anti Bullying Policy 2025-2026",
-      ga: "Anti Bullying Policy 2025-2026",
-      fileName: "Anti Bullying Policy Scoil Bríde 2025-2026.pdf",
-    },
-    {
-      en: "Polasaí Frith-Bhulaíocht",
-      ga: "Polasaí Frith-Bhulaíocht",
-      fileName: "Polasaí Frith-Bhulaíocht.pdf",
-    },
-    {
-      en: "Bí Cineálta Policy",
-      ga: "Bí Cineálta Policy",
-      fileName: "Bí Cineálta Policy.pdf",
-    },
-    {
-      en: "Bí Cinealta Anti‑Bullying Policy",
-      ga: "Bí Cinealta Anti‑Bullying Policy",
-      fileName:
-        "Bí Cinealta Policy to Prevent and Address Bullying Behaviour.pdf",
-    },
-    {
-      en: "Code of Behaviour",
-      ga: "Code of Behaviour",
-      fileName: "Code of Behaviour.pdf",
-    },
-    {
-      en: "CCTV Policy 2022",
-      ga: "CCTV Policy 2022",
-      fileName: "CCTV Policy 2022.pdf",
-    },
-    {
-      en: "Child Safeguarding Statement 25/26",
-      ga: "Child Safeguarding Statement 25/26",
-      fileName: "Child Safeguarding Statement 25_26.pdf",
-    },
-    {
-      en: "Intimate Care and Toileting Policy",
-      ga: "Intimate Care and Toileting Policy",
-      fileName: "Intimate Care and Toileting Policy.pdf",
-    },
-    {
-      en: "Health and Safety Statement 2025",
-      ga: "Health and Safety Statement 2025",
-      fileName: "Scoil Bhríde Health and Safety Statement 2025.pdf",
-    },
-    {
-      en: "Data Protection Policy 2022",
-      ga: "Data Protection Policy 2022",
-      fileName: "Data Protection Policy 2022.pdf",
-    },
-    {
-      en: "GDPR Statement 2022",
-      ga: "GDPR Statement 2022",
-      fileName: "GDPR Statement 2022.pdf",
-    },
-  ],
-  important: [
-    {
-      en: "Important Information",
-      ga: "Eolas Tábhachtach",
-      fileName: "Eolas Tábhachtach _ Important Information Scoil Bhríde.pdf",
-    },
-  ],
-  enrolment: [
-    {
-      en: "Clárú do Scoil Bhríde Enrolment Form",
-      ga: "Clárú do Scoil Bhríde Enrolment Form",
-      fileName: "Clárú do Scoil Bhríde Enrolment Form.pdf",
-    },
-    {
-      en: "Bóín Dé Registration Form",
-      ga: "Bóín Dé Registration Form",
-      fileName: "Bóín Dé Reg form.pdf",
-    },
-  ],
-  calendar: {
-    en: "Calendar",
-    ga: "Calendar",
-    fileName: "Calendar 2025 - 2026.pdf",
-  },
-};
 
 const socialLinks = [
   {
@@ -175,7 +87,7 @@ const galleryItems = [
   })),
 ];
 
-const downloadHref = (file: string) => encodeURI(`/downloads/${file}`);
+const downloadHref = (slug: string) => encodeURI(`/downloads/${slug}`);
 
 export default function Home() {
   const [lang, setLang] = useState<"ga" | "en">("en");
@@ -652,8 +564,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
             {downloads.policies.map((file) => (
               <Link
-                key={file.fileName}
-                href={downloadHref(file.fileName)}
+                key={file.slug}
+                href={downloadHref(file.slug)}
                 label={downloadLabel(file)}
                 type="download"
               />
@@ -664,8 +576,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
             {downloads.important.map((file) => (
               <Link
-                key={file.fileName}
-                href={downloadHref(file.fileName)}
+                key={file.slug}
+                href={downloadHref(file.slug)}
                 label={downloadLabel(file)}
                 type="download"
               />
@@ -676,8 +588,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
             {downloads.enrolment.map((file) => (
               <Link
-                key={file.fileName}
-                href={downloadHref(file.fileName)}
+                key={file.slug}
+                href={downloadHref(file.slug)}
                 label={downloadLabel(file)}
                 type="download"
               />
@@ -713,7 +625,7 @@ export default function Home() {
             <p>{t("links.calendar.subheading")}</p>
             <div className="">
               <Link
-                href={downloadHref(downloads.calendar.fileName)}
+                href={downloadHref(downloads.calendar.slug)}
                 label={`${t("links.calendar.button")} 2025 - 2026`}
                 type="download"
               />
