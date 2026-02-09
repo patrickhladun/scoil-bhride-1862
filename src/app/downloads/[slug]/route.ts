@@ -24,7 +24,8 @@ export async function GET(
   const downloadName = entry.downloadName ?? entry.fileName;
   const encodedName = encodeURIComponent(downloadName);
 
-  return new NextResponse(fileBuffer, {
+  const body = new Uint8Array(fileBuffer);
+  return new NextResponse(body, {
     headers: {
       "Content-Type": "application/pdf",
       "Content-Disposition": `attachment; filename*=UTF-8''${encodedName}`,

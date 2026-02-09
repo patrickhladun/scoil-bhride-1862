@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Scoil Bhride 1862 school website
 
-## Getting Started
+## Downloads
 
-First, run the development server:
+The site serves downloadable PDFs through a clean, slug-based URL. This avoids
+issues with spaces and Irish characters in file names and lets us control the
+download name shown to users.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**How it works**
+- Download metadata lives in `src/app/downloads/data.ts`.
+- Public links point to `/downloads/{slug}`.
+- The route handler in `src/app/downloads/[slug]/route.ts` maps the slug to a
+  file in `public/downloads` and sets `Content-Disposition` so the download name
+  is correct.
+
+**Add a new PDF**
+1. Copy the PDF into `public/downloads`.
+2. Add an entry in `src/app/downloads/data.ts`.
+3. Use a new `slug` (URL-safe and unique).
+
+Example:
+```ts
+{
+  en: "Admission Policy 2025",
+  ga: "Admission Policy 2025",
+  slug: "admission-policy-2025",
+  fileName: "admission-policy-2025.pdf",
+  downloadName: "Admission Policy 2025.pdf",
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Fields**
+- `slug`: Clean URL slug used in `/downloads/{slug}`.
+- `fileName`: Exact filename on disk in `public/downloads`.
+- `downloadName` (optional): Name shown in the browser download dialog. Use this
+  to keep Irish characters even if the disk file is ASCII.
+- `en`/`ga`: Labels used on the website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Important notes**
+- If a file name contains Irish characters, the safest approach is:
+  - Store an ASCII-only `fileName` on disk.
+  - Set `downloadName` with the correct Irish text.
+- `fileName` must match the filename exactly (including accents).
+- Avoid special characters in slugs (`# % ? & +`).

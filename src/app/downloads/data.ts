@@ -37,8 +37,7 @@ export const downloads: Downloads = {
       en: "Bí Cineálta Policy",
       ga: "Bí Cineálta Policy",
       slug: "bi-cinealta-policy",
-      fileName: "bi-cinealta-policy.pdf",
-      downloadName: "Bí Cineálta Policy.pdf",
+      fileName: "Bí Cineálta Policy.pdf",
     },
     {
       en: "Bí Cinealta Anti‑Bullying Policy",
