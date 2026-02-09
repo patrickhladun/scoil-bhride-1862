@@ -1,4 +1,4 @@
-import { readFile } from "fs/promises";
+import { readFile, readdir } from "fs/promises";
 import path from "path";
 import { NextResponse } from "next/server";
 import { findDownloadBySlug } from "../data";
@@ -13,7 +13,24 @@ export async function GET(
     return new NextResponse("Not found", { status: 404 });
   }
 
-  const filePath = path.join(process.cwd(), "public", "downloads", entry.fileName);
+  const downloadsDir = path.join(process.cwd(), "public", "downloads");
+  const requestedName = entry.fileName;
+  let matchedName = requestedName;
+
+  try {
+    const files = await readdir(downloadsDir);
+    const normalizedRequested = requestedName.normalize("NFC");
+    const found = files.find(
+      (name) => name.normalize("NFC") === normalizedRequested
+    );
+    if (found) {
+      matchedName = found;
+    }
+  } catch {
+    return new NextResponse("Not found", { status: 404 });
+  }
+
+  const filePath = path.join(downloadsDir, matchedName);
   let fileBuffer: Buffer;
   try {
     fileBuffer = await readFile(filePath);
@@ -21,7 +38,7 @@ export async function GET(
     return new NextResponse("Not found", { status: 404 });
   }
 
-  const downloadName = entry.downloadName ?? entry.fileName;
+  const downloadName = entry.downloadName ?? requestedName;
   const encodedName = encodeURIComponent(downloadName);
 
   const body = new Uint8Array(fileBuffer);

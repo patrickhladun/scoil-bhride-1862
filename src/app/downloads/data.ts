@@ -25,13 +25,13 @@ export const downloads: Downloads = {
       en: "Anti Bullying Policy 2025-2026",
       ga: "Anti Bullying Policy 2025-2026",
       slug: "anti-bullying-policy-2025-2026",
-      fileName: "Anti Bullying Policy Scoil Bríde 2025-2026.pdf",
+      fileName: "Anti Bullying Policy Scoil Bríde 2025-2026.pdf",
     },
     {
       en: "Polasaí Frith-Bhulaíocht",
       ga: "Polasaí Frith-Bhulaíocht",
       slug: "polasai-frith-bhulai-ocht",
-      fileName: "Polasaí Frith-Bhulaíocht.pdf",
+      fileName: "Polasaí Frith-Bhulaíocht.pdf",
     },
     {
       en: "Bí Cineálta Policy",
@@ -43,8 +43,7 @@ export const downloads: Downloads = {
       en: "Bí Cinealta Anti‑Bullying Policy",
       ga: "Bí Cinealta Anti‑Bullying Policy",
       slug: "bi-cinealta-anti-bullying-policy",
-      fileName:
-        "Bí Cinealta Policy to Prevent and Address Bullying Behaviour.pdf",
+      fileName: "Bí Cinealta Policy to Prevent and Address Bullying Behaviour.pdf",
     },
     {
       en: "Code of Behaviour",
@@ -74,7 +73,7 @@ export const downloads: Downloads = {
       en: "Health and Safety Statement 2025",
       ga: "Health and Safety Statement 2025",
       slug: "health-and-safety-statement-2025",
-      fileName: "Scoil Bhríde Health and Safety Statement 2025.pdf",
+      fileName: "Scoil Bhríde Health and Safety Statement 2025.pdf",
     },
     {
       en: "Data Protection Policy 2022",
@@ -102,7 +101,7 @@ export const downloads: Downloads = {
       en: "Clárú do Scoil Bhríde Enrolment Form",
       ga: "Clárú do Scoil Bhríde Enrolment Form",
       slug: "enrolment-form",
-      fileName: "Clárú do Scoil Bhríde Enrolment Form.pdf",
+      fileName: "Clárú do Scoil Bhríde Enrolment Form.pdf",
     },
     {
       en: "Bóín Dé Registration Form",
