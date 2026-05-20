@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm \"/Volumes/Firestorm/Clients Work/scoilbhride1862/src/app/downloads/[slug]/route.ts\")",
+      "Bash(rmdir \"/Volumes/Firestorm/Clients Work/scoilbhride1862/src/app/downloads/[slug]\")",
+      "Bash(rm -rf \"/Volumes/Firestorm/Clients Work/scoilbhride1862/src/app/downloads/[slug]\" \"/Volumes/Firestorm/Clients Work/scoilbhride1862/src/app/session\")",
+      "Bash(npx -y serve@latest out -l 3000)",
+      "Bash(curl -s -o /dev/null -w \"/ → %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"/downloads/Admission%%20Policy%%202025.pdf → %{http_code}\\\\n\" \"http://localhost:3000/downloads/Admission%20Policy%202025.pdf\")",
+      "Bash(curl -s -o /dev/null -w \"/random-missing-url → %{http_code}\\\\n\" http://localhost:3000/random-missing-url)"
+    ],
+    "additionalDirectories": [
+      "/Volumes/Firestorm/Clients Work/scoilbhride1862/src/app/downloads/[slug]"
+    ]
+  }
+}

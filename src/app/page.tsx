@@ -87,7 +87,7 @@ const galleryItems = [
   })),
 ];
 
-const downloadHref = (slug: string) => encodeURI(`/downloads/${slug}`);
+const downloadHref = (fileName: string) => encodeURI(`/downloads/${fileName}`);
 
 export default function Home() {
   const [lang, setLang] = useState<"ga" | "en">("en");
@@ -565,7 +565,7 @@ export default function Home() {
             {downloads.policies.map((file) => (
               <Link
                 key={file.slug}
-                href={downloadHref(file.slug)}
+                href={downloadHref(file.fileName)}
                 label={downloadLabel(file)}
                 type="download"
               />
@@ -577,7 +577,7 @@ export default function Home() {
             {downloads.important.map((file) => (
               <Link
                 key={file.slug}
-                href={downloadHref(file.slug)}
+                href={downloadHref(file.fileName)}
                 label={downloadLabel(file)}
                 type="download"
               />
@@ -589,7 +589,7 @@ export default function Home() {
             {downloads.enrolment.map((file) => (
               <Link
                 key={file.slug}
-                href={downloadHref(file.slug)}
+                href={downloadHref(file.fileName)}
                 label={downloadLabel(file)}
                 type="download"
               />
@@ -625,7 +625,7 @@ export default function Home() {
             <p>{t("links.calendar.subheading")}</p>
             <div className="">
               <Link
-                href={downloadHref(downloads.calendar.slug)}
+                href={downloadHref(downloads.calendar.fileName)}
                 label={`${t("links.calendar.button")} 2025 - 2026`}
                 type="download"
               />
